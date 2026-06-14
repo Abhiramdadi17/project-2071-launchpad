@@ -156,23 +156,26 @@ const InsightDetail = ({ slug = "cfo-intelligence-suite" }: Props) => {
 
           <div className="flex flex-col lg:flex-row items-stretch gap-3 lg:gap-0">
             {data.pipeline.map((p, i) => (
-              <ScrollReveal
-                key={i}
-                animation="scaleUp"
-                duration={0.6}
-                delay={i * 0.1}
-                className="flex items-center flex-1"
-              >
-                <div className="flex-1 border border-[#0A0A06]/20 bg-white rounded-sm px-4 py-4 min-h-[88px] h-full flex flex-col justify-center transition-all hover:shadow-md hover:-translate-y-0.5">
-                  <div className="text-[#0A0A06] text-[14px] sm:text-[15px] font-bold mb-1.5">{p.title}</div>
-                  <div className="text-[#0A0A06]/70 text-[10px] sm:text-[10.5px] font-semibold tracking-[0.16em] whitespace-pre-line leading-[1.5]">
-                    {p.sub}
+              <div key={i} className="flex items-center flex-1">
+                <ScrollReveal
+                  animation="scaleUp"
+                  duration={0.6}
+                  delay={i * 0.1}
+                  className="w-full h-full"
+                >
+                  <div className="w-full h-full border border-[#0A0A06]/20 bg-white rounded-sm px-4 py-4 min-h-[88px] flex flex-col justify-center transition-all hover:shadow-md hover:-translate-y-0.5">
+                    <div className="text-[#0A0A06] text-[14px] sm:text-[15px] font-bold mb-1.5">{p.title}</div>
+                    <div className="text-[#0A0A06]/70 text-[10px] sm:text-[10.5px] font-semibold tracking-[0.16em] whitespace-pre-line leading-[1.5]">
+                      {p.sub}
+                    </div>
                   </div>
-                </div>
-                {i < data.pipeline.length - 1 && (
-                  <div className="px-2 text-[#0A0A06]/50 text-[18px] hidden lg:block">→</div>
+                </ScrollReveal>
+                {i < data.pipeline.length - 1 ? (
+                  <div className="px-2 text-[#0A0A06]/50 text-[18px] hidden lg:block self-center">→</div>
+                ) : (
+                  <div className="px-2 hidden lg:block self-center" style={{ width: "1.5rem" }} />
                 )}
-              </ScrollReveal>
+              </div>
             ))}
           </div>
         </div>
