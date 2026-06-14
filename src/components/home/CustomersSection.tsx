@@ -1,6 +1,5 @@
 import ScrollReveal from "@/components/ewm/ScrollReveal";
-import customersBgAsset from "@/assets/customers-bg.mp4.asset.json";
-const customersBg = customersBgAsset.url;
+import customersBg from "@/assets/customers-bg.mp4";
 
 const CustomersSection = () => {
   return (
