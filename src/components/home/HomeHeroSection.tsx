@@ -63,7 +63,7 @@ const HomeHeroSection = () => {
                 <a
                   key={label}
                   href="#"
-                  className="flex items-center gap-1.5 whitespace-nowrap text-[12px] sm:text-[11px] md:text-[12px] lg:text-[10px] xl:text-[11px] 2xl:text-[13px] text-foreground/80 transition-colors hover:text-foreground shrink-0"
+                  className="flex items-center gap-1.5 whitespace-nowrap text-[13px] sm:text-[12px] md:text-[13px] lg:text-[11px] xl:text-[12px] 2xl:text-[14px] text-foreground/80 transition-colors hover:text-foreground shrink-0"
                 >
                   <Icon className="h-[18px] w-[18px] sm:h-[18px] sm:w-[18px] md:h-[20px] md:w-[20px] lg:h-[16px] lg:w-[16px] xl:h-[18px] xl:w-[18px] 2xl:h-[22px] 2xl:w-[22px] shrink-0 opacity-75" strokeWidth={1.4} />
                   <span className="hidden sm:inline">{label}</span>
