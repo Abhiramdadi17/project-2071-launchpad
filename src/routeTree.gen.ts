@@ -8,9 +8,8 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { createFileRoute } from '@tanstack/react-router'
-
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VisionAnalyticsRouteImport } from './routes/vision-analytics'
 import { Route as TechFactoryRouteImport } from './routes/tech-factory'
 import { Route as SplunkAiApplicationsRouteImport } from './routes/splunk-ai-applications'
 import { Route as ShopfloorDigitalAppsRouteImport } from './routes/shopfloor-digital-apps'
@@ -39,9 +38,7 @@ import { Route as CareersRouteImport } from './routes/careers'
 import { Route as AgenticIntelligenceRouteImport } from './routes/agentic-intelligence'
 import { Route as IndexRouteImport } from './routes/index'
 
-const VisionAnalyticsLazyRouteImport = createFileRoute('/vision-analytics')()
-
-const VisionAnalyticsLazyRoute = VisionAnalyticsLazyRouteImport.update({
+const VisionAnalyticsRoute = VisionAnalyticsRouteImport.update({
   id: '/vision-analytics',
   path: '/vision-analytics',
   getParentRoute: () => rootRouteImport,
@@ -246,7 +243,7 @@ export interface FileRoutesByFullPath {
   '/shopfloor-digital-apps': typeof ShopfloorDigitalAppsRoute
   '/splunk-ai-applications': typeof SplunkAiApplicationsRoute
   '/tech-factory': typeof TechFactoryRoute
-  '/vision-analytics': typeof VisionAnalyticsLazyRoute
+  '/vision-analytics': typeof VisionAnalyticsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -276,7 +273,7 @@ export interface FileRoutesByTo {
   '/shopfloor-digital-apps': typeof ShopfloorDigitalAppsRoute
   '/splunk-ai-applications': typeof SplunkAiApplicationsRoute
   '/tech-factory': typeof TechFactoryRoute
-  '/vision-analytics': typeof VisionAnalyticsLazyRoute
+  '/vision-analytics': typeof VisionAnalyticsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -307,7 +304,7 @@ export interface FileRoutesById {
   '/shopfloor-digital-apps': typeof ShopfloorDigitalAppsRoute
   '/splunk-ai-applications': typeof SplunkAiApplicationsRoute
   '/tech-factory': typeof TechFactoryRoute
-  '/vision-analytics': typeof VisionAnalyticsLazyRoute
+  '/vision-analytics': typeof VisionAnalyticsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -430,7 +427,7 @@ export interface RootRouteChildren {
   ShopfloorDigitalAppsRoute: typeof ShopfloorDigitalAppsRoute
   SplunkAiApplicationsRoute: typeof SplunkAiApplicationsRoute
   TechFactoryRoute: typeof TechFactoryRoute
-  VisionAnalyticsLazyRoute: typeof VisionAnalyticsLazyRoute
+  VisionAnalyticsRoute: typeof VisionAnalyticsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -439,7 +436,7 @@ declare module '@tanstack/react-router' {
       id: '/vision-analytics'
       path: '/vision-analytics'
       fullPath: '/vision-analytics'
-      preLoaderRoute: typeof VisionAnalyticsLazyRouteImport
+      preLoaderRoute: typeof VisionAnalyticsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tech-factory': {
@@ -662,18 +659,8 @@ const rootRouteChildren: RootRouteChildren = {
   ShopfloorDigitalAppsRoute: ShopfloorDigitalAppsRoute,
   SplunkAiApplicationsRoute: SplunkAiApplicationsRoute,
   TechFactoryRoute: TechFactoryRoute,
-  VisionAnalyticsLazyRoute: VisionAnalyticsLazyRoute,
+  VisionAnalyticsRoute: VisionAnalyticsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
