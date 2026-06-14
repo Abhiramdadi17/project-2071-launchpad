@@ -534,7 +534,7 @@ const BoardroomSection = () => {
         </div>
 
         {/* Footer feature row */}
-        <div className="mt-6 rounded-md px-5 sm:px-7 py-4 sm:py-5 flex flex-wrap items-center justify-between gap-4 sm:gap-6" style={{ background: "#0B0F18", border: "1px solid rgba(255,255,255,0.06)" }}>
+        <div className="mt-6 rounded-md px-5 sm:px-7 py-4 sm:py-5 flex flex-wrap lg:flex-nowrap items-center justify-between gap-4 sm:gap-6" style={{ background: "#0B0F18", border: "1px solid rgba(255,255,255,0.06)" }}>
           {[
             { k: "Live", v: "DirectQuery - no refresh lag" },
             { k: "RLS", v: "SAP auth row-level security" },
