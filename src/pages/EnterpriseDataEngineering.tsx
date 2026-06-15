@@ -117,7 +117,7 @@ const PlatformSection = () => {
   const chips = ["Multi-Source Ingestion", "ADF Orchestration", "Delta Lakehouse", "Real-Time Analytics", "AI/ML Serving"];
   return (
     <motion.section className="py-8 sm:py-12" style={{ background: "#0A0D0A" }} initial={{ opacity: 0, y: 60, scale: 0.96, filter: "blur(10px)" }} whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
-      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[5fr_7fr] gap-12 items-center">
         <div>
           <Eyebrow text="Data Architecture" />
           <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-medium text-white mb-5 leading-[1.1]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -335,7 +335,7 @@ const ProcessSection = () => {
   const chips = ["SAP Native", "Azure ADF", "Databricks", "AI / ML", "Power BI", "Security"];
   return (
     <motion.section className="py-8 sm:py-12" style={{ background: "#000" }} initial={{ opacity: 0, y: 60, scale: 0.96, filter: "blur(10px)" }} whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
-      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[2fr_3fr] gap-12 items-center">
         <div>
           <Eyebrow text="What We Work" />
           <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-medium text-white mb-6 leading-[1.1]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>

@@ -258,7 +258,7 @@ const PlantRulesSection = () => {
     },
   ];
   return (
-    <section className="pt-6 sm:pt-8 pb-20 sm:pb-28" style={{ background: "#070A07" }}>
+    <section className="pt-6 sm:pt-8 pb-20 sm:pb-28 xl:pb-4" style={{ background: "#070A07" }}>
       <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
         <Reveal>
           <Eyebrow text="Deployment Architecture" />
@@ -305,10 +305,9 @@ const StackedCards = ({ cards }: { cards: DeployCard[] }) => {
       {/* Sticky stacking version — only on large screens (>=1024px) where card height fits viewport */}
       <div
         ref={containerRef}
-        className="mx-auto max-w-[1020px] relative hidden lg:block"
-        style={{ height: "420vh" }}
+        className="mx-auto max-w-[1020px] relative hidden lg:block h-[420vh] xl:h-[160vh]"
       >
-        <div className="sticky top-[100px] h-[calc(100vh-120px)]">
+        <div className="sticky top-[100px] h-[calc(100vh-120px)] xl:h-[460px]">
           <div className="relative h-full">
             {cards.map((c, i) => (
               <StackedCardLayer key={c.t} card={c} index={i} progress={smoothProgress} />
@@ -419,9 +418,9 @@ const StackedCardLayer = ({
   index: number;
   progress: ReturnType<typeof useScroll>["scrollYProgress"];
 }) => {
-  // Each card lands flush at y = 0 (fully covers the previous card — no peeking edge).
-  const enterStart = index === 0 ? 0 : 0.16 + (index - 1) * 0.28;
-  const enterEnd = index === 0 ? 0.05 : enterStart + 0.22;
+  // Each card lands flush at y = 0. Last card ends at ~0.96 so dead scroll is <4% of container.
+  const enterStart = index === 0 ? 0 : 0.22 + (index - 1) * 0.44;
+  const enterEnd = index === 0 ? 0.06 : enterStart + 0.30;
   const y = useTransform(
     progress,
     [enterStart, enterEnd, 1],
@@ -535,7 +534,7 @@ const AutonomousActionsSection = () => {
     { tag: "Agentic", t: "Autonomous SAP Order Management", d: "Co-pilots propose rescheduling with single-click approval" },
   ];
   return (
-    <section className="py-16 sm:py-24" style={{ background: PANEL_2 }}>
+    <section className="py-16 sm:py-24 xl:pt-10" style={{ background: PANEL_2 }}>
       <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
         <Reveal>
           <Eyebrow text="AI & Agentic Operations" />

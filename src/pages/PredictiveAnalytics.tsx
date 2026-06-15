@@ -273,10 +273,10 @@ const PredictiveAnalytics = () => {
 
       {/* SECTION 3 — Signal to Decision in 5 steps */}
       <section
-        className="relative py-8 sm:py-10 px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20"
+        className="relative py-8 sm:py-10 px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20"
         style={{ backgroundColor: "#0A1020" }}
       >
-        <div className="mx-auto max-w-[1200px]">
+        <div className="mx-auto max-w-[1200px] xl:max-w-[1400px]">
           <ScrollReveal animation="fadeUp" duration={0.4}>
             <p
               className="text-center text-[11px] uppercase tracking-[0.2em] mb-4 flex items-center justify-center gap-2"
@@ -303,7 +303,7 @@ const PredictiveAnalytics = () => {
             </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-[980px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-[980px] xl:max-w-none mx-auto">
             {steps.map((s, i) => (
               <motion.div
                 key={s.title}
@@ -325,11 +325,11 @@ const PredictiveAnalytics = () => {
                     style={{ filter: "brightness(0) invert(1)" }}
                   />
                 </div>
-                <h3 className="text-[17px] sm:text-[14px] font-semibold text-white mb-2">
+                <h3 className="text-[17px] sm:text-[14px] xl:text-[16px] font-semibold text-white mb-2">
                   {s.title}
                 </h3>
                 <p
-                  className="text-[14px] sm:text-[11.5px] leading-relaxed"
+                  className="text-[14px] sm:text-[11.5px] xl:text-[13px] leading-relaxed"
                   style={{ color: "#7A8AA0" }}
                 >
                   {s.desc}

@@ -124,20 +124,20 @@ const disciplines: Discipline[] = [
 
 const DisciplinesSection = () => (
   <section className="py-8 sm:py-10 bg-black">
-    <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
+    <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
       <ScrollReveal animation="fadeUp">
         <div className="text-center mb-7">
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="w-6 h-px" style={{ background: LIME }} />
-            <span className="text-[12px] sm:text-[10px] font-medium tracking-[0.2em]" style={{ color: LIME }}>
+            <span className="text-[12px] sm:text-[10px] xl:text-[12px] font-medium tracking-[0.2em]" style={{ color: LIME }}>
               Capacity Intelligence
             </span>
             <span className="w-6 h-px" style={{ background: LIME }} />
           </div>
-          <h2 className="text-[36px] sm:text-[36px] md:text-[40px] font-medium text-white leading-[1.15]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-[36px] sm:text-[36px] md:text-[40px] xl:text-[50px] font-medium text-white leading-[1.15]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             14 Disciplines. One Bench.
           </h2>
-          <p className="mt-3 text-[15px] sm:text-[13px]" style={{ color: "rgba(255,255,255,0.5)" }}>
+          <p className="mt-3 text-[15px] sm:text-[13px] xl:text-[16px]" style={{ color: "rgba(255,255,255,0.5)" }}>
             Each resource is SAP-certified, project-tested, and ready for immediate deployment.
           </p>
         </div>
@@ -148,31 +148,31 @@ const DisciplinesSection = () => (
           const Icon = d.icon;
           return (
             <ScrollReveal key={d.num} animation="fadeUp" delay={i * 0.05}>
-              <div className="group/disc border-t border-white/10 pt-5 pb-6 px-3 sm:px-4 transition-colors duration-500 ease-out hover:bg-white/[0.03]">
+              <div className="group/disc border-t border-white/10 pt-5 pb-6 px-3 sm:px-4 xl:px-6 transition-colors duration-500 ease-out hover:bg-white/[0.03]">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-5 sm:gap-8">
                     <span
-                      className="text-[20px] sm:text-[18px] md:text-[20px] font-light transition-colors duration-500 group-hover/disc:text-white/60"
+                      className="text-[20px] sm:text-[18px] md:text-[20px] xl:text-[24px] font-light transition-colors duration-500 group-hover/disc:text-white/60"
                       style={{ color: "rgba(255,255,255,0.3)", fontFamily: "'Space Grotesk', sans-serif" }}
                     >
                       {d.num}
                     </span>
                     <h3
-                      className="text-[21px] sm:text-[20px] md:text-[22px] font-medium leading-tight text-white"
+                      className="text-[21px] sm:text-[20px] md:text-[22px] xl:text-[26px] font-medium leading-tight text-white"
                       style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                     >
                       {d.title}
                     </h3>
                   </div>
-                  <span className="text-[11px] sm:text-[10px] tracking-[0.2em] uppercase" style={{ color: "rgba(255,255,255,0.4)" }}>
+                  <span className="text-[11px] sm:text-[10px] xl:text-[12px] tracking-[0.2em] uppercase" style={{ color: "rgba(255,255,255,0.4)" }}>
                     {d.skills.length} Skill{d.skills.length > 1 ? "s" : ""}
                   </span>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5 xl:gap-3">
                   {d.skills.map((s, idx) => (
                     <div
                       key={s.title}
-                      className="group/skill flex items-center gap-2.5 px-3 py-2.5 cursor-pointer opacity-90 translate-y-0 group-hover/disc:opacity-100 hover:!bg-white/[0.08] hover:!border-white/25 hover:-translate-y-0.5"
+                      className="group/skill flex items-center gap-2.5 xl:gap-3 px-3 py-2.5 xl:px-4 xl:py-3 cursor-pointer opacity-90 translate-y-0 group-hover/disc:opacity-100 hover:!bg-white/[0.08] hover:!border-white/25 hover:-translate-y-0.5"
                       style={{
                         background: "rgba(255,255,255,0.02)",
                         border: "1px solid rgba(255,255,255,0.08)",
@@ -185,7 +185,7 @@ const DisciplinesSection = () => (
                         const c = SKILL_COLORS[idx % SKILL_COLORS.length];
                         return (
                           <div
-                            className="w-6 h-6 flex items-center justify-center shrink-0 transition-colors duration-300"
+                            className="w-6 h-6 xl:w-7 xl:h-7 flex items-center justify-center shrink-0 transition-colors duration-300"
                             style={{ background: `${c}22`, borderRadius: "2px" }}
                           >
                             <Icon size={12} color={c} />
@@ -193,8 +193,8 @@ const DisciplinesSection = () => (
                         );
                       })()}
                       <div>
-                        <div className="text-white text-[13.5px] sm:text-[11.5px] font-medium leading-tight">{s.title}</div>
-                        <div className="text-[12px] sm:text-[10px] mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>{s.subtitle}</div>
+                        <div className="text-white text-[13.5px] sm:text-[11.5px] xl:text-[14px] font-medium leading-tight">{s.title}</div>
+                        <div className="text-[12px] sm:text-[10px] xl:text-[12px] mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>{s.subtitle}</div>
                       </div>
                     </div>
                   ))}

@@ -87,8 +87,8 @@ const SpecialistsSection = () => {
   ];
   return (
     <section className="py-10 sm:py-14" style={{ background: "#060604" }}>
-      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
+      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[2fr_3fr] gap-8 sm:gap-12 xl:gap-8 items-center">
           <Reveal>
             <Eyebrow text="Who We Are" />
             <h2 className="text-[42px] sm:text-[44px] md:text-[52px] font-medium leading-[1.05] mb-6 text-white" style={{ fontFamily: GROTESK }}>

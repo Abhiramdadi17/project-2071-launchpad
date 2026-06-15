@@ -469,7 +469,7 @@ const ProductionTruthSection = () => {
   ];
   return (
     <section className="py-14 sm:py-20" style={{ background: "#060604" }}>
-    <div className="mx-auto max-w-[1120px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
+      <div className="mx-auto max-w-[1120px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
         <div
           className="text-center block uppercase mb-3"
           style={{
@@ -1140,22 +1140,22 @@ const Reveal = ({
   const y = useSpring(yRaw, { stiffness: 80, damping: 22, mass: 0.6 });
 
   const initialMap: Record<RevealVariant, Record<string, number>> = {
-    rise:     { opacity: 0, y: 70 },
+    rise: { opacity: 0, y: 70 },
     parallax: { opacity: 0, y: 90 },
-    zoom:     { opacity: 0, scale: 0.92, y: 40 },
-    tilt:     { opacity: 0, y: 60, rotateX: 10 },
-    slideL:   { opacity: 0, x: -80 },
-    slideR:   { opacity: 0, x: 80 },
-    blur:     { opacity: 0, y: 40, filter: "blur(14px)" as unknown as number },
+    zoom: { opacity: 0, scale: 0.92, y: 40 },
+    tilt: { opacity: 0, y: 60, rotateX: 10 },
+    slideL: { opacity: 0, x: -80 },
+    slideR: { opacity: 0, x: 80 },
+    blur: { opacity: 0, y: 40, filter: "blur(14px)" as unknown as number },
   };
   const animateMap: Record<RevealVariant, Record<string, number | string>> = {
-    rise:     { opacity: 1, y: 0 },
+    rise: { opacity: 1, y: 0 },
     parallax: { opacity: 1, y: 0 },
-    zoom:     { opacity: 1, scale: 1, y: 0 },
-    tilt:     { opacity: 1, y: 0, rotateX: 0 },
-    slideL:   { opacity: 1, x: 0 },
-    slideR:   { opacity: 1, x: 0 },
-    blur:     { opacity: 1, y: 0, filter: "blur(0px)" },
+    zoom: { opacity: 1, scale: 1, y: 0 },
+    tilt: { opacity: 1, y: 0, rotateX: 0 },
+    slideL: { opacity: 1, x: 0 },
+    slideR: { opacity: 1, x: 0 },
+    blur: { opacity: 1, y: 0, filter: "blur(0px)" },
   };
 
   if (reduce) {
@@ -1221,7 +1221,7 @@ const ShopFloor = () => (
     `}</style>
     <ScrollProgress />
     <div
-      className="mx-auto w-full max-w-[1280px]"
+      className="mx-auto w-full "
       style={{ background: PANEL }}
     >
       <Navbar />

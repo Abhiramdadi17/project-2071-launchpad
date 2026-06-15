@@ -915,55 +915,55 @@ const TestimonialsGrid = ({
               transition: "box-shadow 0.4s ease, border-color 0.4s ease",
             }}
           >
-                <div className="flex items-center gap-3 mb-4 relative z-10 transition-opacity duration-300" style={{ opacity: textOpacity }}>
-                  <span
-                    className="flex items-center justify-center rounded-full shrink-0"
-                    style={{
-                      width: 44,
-                      height: 44,
-                      border: `1px solid ${border}`,
-                      color: t.fg,
-                      fontFamily: SERIF,
-                      fontWeight: 400,
-                      fontSize: "14px",
-                      lineHeight: 1,
-                    }}
-                  >
-                    {t.badge}
-                  </span>
-                  <span
-                    className="text-[14px] uppercase tracking-[0.18em]"
-                    style={{ color: muted, fontFamily: "Inter, sans-serif", fontWeight: 500 }}
-                  >
-                    {t.label}
-                  </span>
-                </div>
+            <div className="flex items-center gap-3 mb-4 relative z-10 transition-opacity duration-300" style={{ opacity: textOpacity }}>
+              <span
+                className="flex items-center justify-center rounded-full shrink-0"
+                style={{
+                  width: 44,
+                  height: 44,
+                  border: `1px solid ${border}`,
+                  color: t.fg,
+                  fontFamily: SERIF,
+                  fontWeight: 400,
+                  fontSize: "14px",
+                  lineHeight: 1,
+                }}
+              >
+                {t.badge}
+              </span>
+              <span
+                className="text-[14px] uppercase tracking-[0.18em]"
+                style={{ color: muted, fontFamily: "Inter, sans-serif", fontWeight: 500 }}
+              >
+                {t.label}
+              </span>
+            </div>
 
-                <div
-                  aria-hidden
-                  className="absolute right-4 text-[76px] sm:text-[100px] font-light pointer-events-none whitespace-nowrap leading-none transition-opacity duration-300"
-                  style={{ fontFamily: SERIF, color: watermarkColor, top: 38, opacity: textOpacity }}
-                >
-                  {t.watermark}
-                </div>
+            <div
+              aria-hidden
+              className="absolute right-4 text-[76px] sm:text-[100px] font-light pointer-events-none whitespace-nowrap leading-none transition-opacity duration-300"
+              style={{ fontFamily: SERIF, color: watermarkColor, top: 38, opacity: textOpacity }}
+            >
+              {t.watermark}
+            </div>
 
-                <p
-                  className="text-[19px] sm:text-[21px] leading-[1.55] mb-5 relative z-10 font-light transition-opacity duration-300"
-                  style={{ color: t.quoteColor, fontFamily: SERIF, opacity: textOpacity }}
-                >
-                  {t.quote}
-                </p>
+            <p
+              className="text-[19px] sm:text-[21px] leading-[1.55] mb-5 relative z-10 font-light transition-opacity duration-300"
+              style={{ color: t.quoteColor, fontFamily: SERIF, opacity: textOpacity }}
+            >
+              {t.quote}
+            </p>
 
-                <div className="mt-auto relative z-10 transition-opacity duration-300" style={{ fontFamily: "Inter, sans-serif", opacity: textOpacity }}>
-                  <div className="text-[14px] font-semibold mb-0.5" style={{ color: t.fg }}>
-                    {t.name}
-                  </div>
-                  <div className="text-[14px] font-light" style={{ color: subtle }}>
-                    {t.role}
-                  </div>
-                </div>
-              </motion.div>
-            );
+            <div className="mt-auto relative z-10 transition-opacity duration-300" style={{ fontFamily: "Inter, sans-serif", opacity: textOpacity }}>
+              <div className="text-[14px] font-semibold mb-0.5" style={{ color: t.fg }}>
+                {t.name}
+              </div>
+              <div className="text-[14px] font-light" style={{ color: subtle }}>
+                {t.role}
+              </div>
+            </div>
+          </motion.div>
+        );
       })}
     </div>
   );
@@ -973,103 +973,103 @@ const TestimonialsGrid = ({
 const SeeInventiqCTASection = () => {
   const ease = [0.25, 0.46, 0.45, 0.94] as const;
   return (
-  <section className="pt-10 sm:pt-12 md:pt-14 pb-0" style={{ background: "#EAEAEA" }}>
-    <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20 text-center">
-      <motion.h2
-        className="text-[32px] sm:text-[44px] md:text-[56px] leading-[1.05] mb-5 sm:mb-6"
-        style={{ fontFamily: SERIF, color: "#111", letterSpacing: "-0.01em", fontWeight: 300 }}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.8, ease }}
-      >
-        See InventIQ on
-        <br />
-        your SAP data
-      </motion.h2>
-      <motion.p
-        className="text-[14px] sm:text-[15px] mb-6 sm:mb-7 leading-relaxed px-2"
-        style={{ color: "rgba(0,0,0,0.65)" }}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.6 }}
-        transition={{ duration: 0.7, delay: 0.15, ease }}
-      >
-        In two weeks, we quantify exactly how much working capital you can free — using your own inventory data.
-        <br className="hidden sm:block" />
-        <span className="sm:hidden"> </span>
-        No cost. No commitment.
-      </motion.p>
-      <motion.div
-        className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pb-12 sm:pb-14 md:pb-16"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.12, delayChildren: 0.25 } },
-        }}
-      >
-        {["Contact Us", "Explore More"].map((label) => (
-          <motion.a
-            key={label}
-            href={label === "Contact Us" ? "/contact" : "#"}
+    <section className="pt-10 sm:pt-12 md:pt-14 pb-0" style={{ background: "#EAEAEA" }}>
+      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20 text-center">
+        <motion.h2
+          className="text-[32px] sm:text-[44px] md:text-[56px] leading-[1.05] mb-5 sm:mb-6"
+          style={{ fontFamily: SERIF, color: "#111", letterSpacing: "-0.01em", fontWeight: 300 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8, ease }}
+        >
+          See InventIQ on
+          <br />
+          your SAP data
+        </motion.h2>
+        <motion.p
+          className="text-[14px] sm:text-[15px] mb-6 sm:mb-7 leading-relaxed px-2"
+          style={{ color: "rgba(0,0,0,0.65)" }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.7, delay: 0.15, ease }}
+        >
+          In two weeks, we quantify exactly how much working capital you can free — using your own inventory data.
+          <br className="hidden sm:block" />
+          <span className="sm:hidden"> </span>
+          No cost. No commitment.
+        </motion.p>
+        <motion.div
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pb-12 sm:pb-14 md:pb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.12, delayChildren: 0.25 } },
+          }}
+        >
+          {["Contact Us", "Explore More"].map((label) => (
+            <motion.a
+              key={label}
+              href={label === "Contact Us" ? "/contact" : "#"}
 
-            className="w-full sm:w-auto px-8 sm:px-9 py-3.5 text-[14px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white text-center"
-            style={{ border: "1px solid rgba(0,0,0,0.35)" }}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
-            }}
-          >
-            {label}
-          </motion.a>
-        ))}
-      </motion.div>
-    </div>
+              className="w-full sm:w-auto px-8 sm:px-9 py-3.5 text-[14px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white text-center"
+              style={{ border: "1px solid rgba(0,0,0,0.35)" }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
+              }}
+            >
+              {label}
+            </motion.a>
+          ))}
+        </motion.div>
+      </div>
 
-    {/* dark bottom bar — straddles CTA bg and footer */}
-    <div
-      className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20 relative"
-      style={{ marginBottom: "-70px" }}
-    >
-      <motion.div
-        className="rounded-2xl px-6 sm:px-8 md:px-10 py-6 sm:py-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 md:gap-6 text-left relative z-10"
-        style={{ background: "#1A1A1A" }}
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8, ease }}
+      {/* dark bottom bar — straddles CTA bg and footer */}
+      <div
+        className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20 relative"
+        style={{ marginBottom: "-70px" }}
       >
-        <div className="min-w-0">
-          <div
-            className="text-[19px] sm:text-[21px] text-white mb-1 font-light"
-            style={{ fontFamily: SERIF }}
-          >
-            Works with what you already have
+        <motion.div
+          className="rounded-2xl px-6 sm:px-8 md:px-10 py-6 sm:py-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 md:gap-6 text-left relative z-10"
+          style={{ background: "#1A1A1A" }}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease }}
+        >
+          <div className="min-w-0">
+            <div
+              className="text-[19px] sm:text-[21px] text-white mb-1 font-light"
+              style={{ fontFamily: SERIF }}
+            >
+              Works with what you already have
+            </div>
+            <div className="text-[14px] text-white/55 leading-relaxed">
+              SAP S/4HANA · ECC 6.0 · IBP · Azure Cloud · Power BI — no middleware required.
+            </div>
           </div>
-          <div className="text-[14px] text-white/55 leading-relaxed">
-            SAP S/4HANA · ECC 6.0 · IBP · Azure Cloud · Power BI — no middleware required.
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 shrink-0 w-full md:w-auto">
+            <a
+              href="#"
+              className="px-6 py-3 text-[14px] font-medium rounded-full transition-transform hover:scale-105 text-center whitespace-nowrap"
+              style={{ background: "#fff", color: "#111" }}
+            >
+              Book a Consultant
+            </a>
+            <a
+              href="#"
+              className="text-[14px] text-white/85 hover:text-white inline-flex items-center justify-center sm:justify-start gap-1.5 whitespace-nowrap"
+            >
+              Explore Services <ArrowUpRight size={12} />
+            </a>
           </div>
-        </div>
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 shrink-0 w-full md:w-auto">
-          <a
-            href="#"
-            className="px-6 py-3 text-[14px] font-medium rounded-full transition-transform hover:scale-105 text-center whitespace-nowrap"
-            style={{ background: "#fff", color: "#111" }}
-          >
-            Book a Consultant
-          </a>
-          <a
-            href="#"
-            className="text-[14px] text-white/85 hover:text-white inline-flex items-center justify-center sm:justify-start gap-1.5 whitespace-nowrap"
-          >
-            Explore Services <ArrowUpRight size={12} />
-          </a>
-        </div>
-      </motion.div>
-    </div>
-  </section>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
@@ -1079,7 +1079,7 @@ const Inventiq = () => (
     style={{ background: PANEL, fontFamily: "'Space Grotesk', sans-serif" }}
   >
     <div
-      className="mx-auto w-full max-w-[1280px] overflow-hidden"
+      className="mx-auto w-full  overflow-hidden"
       style={{ background: PANEL }}
     >
       <Navbar />

@@ -180,7 +180,7 @@ export default function Sfx9Mes() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0B0C0E]/55 via-[#0B0C0E]/40 to-[#0B0C0E]" />
         </div>
-        <div className="relative mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-8 sm:px-12 md:px-[72px] lg:px-24 xl:px-[140px] 2xl:px-24 pt-32 sm:pt-44 md:pt-56 pb-14 sm:pb-24 md:pb-36">
+        <div className="relative mx-auto xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-8 sm:px-12 md:px-[72px] lg:px-24 xl:px-[140px] 2xl:px-24 pt-32 sm:pt-44 md:pt-56 pb-14 sm:pb-24 md:pb-36">
           <motion.p
             className="uppercase tracking-[0.32em] text-white/65 text-[11px] sm:text-[12px] font-medium mb-4 sm:mb-7"
             initial={{ opacity: 0, y: 30 }}
@@ -658,11 +658,10 @@ function CapabilityTabs() {
                   <button
                     type="button"
                     onClick={() => setActiveIndex(i)}
-                    className={`w-full text-left py-3 px-4 rounded-md text-[14px] sm:text-[15px] transition-colors ${
-                      isActive
-                        ? "bg-white/[0.08] text-white"
-                        : "text-white/55 hover:text-white/80"
-                    }`}
+                    className={`w-full text-left py-3 px-4 rounded-md text-[14px] sm:text-[15px] transition-colors ${isActive
+                      ? "bg-white/[0.08] text-white"
+                      : "text-white/55 hover:text-white/80"
+                      }`}
                     style={{ fontFamily: SERIF, fontWeight: 600 }}
                   >
                     {c.tab}
@@ -810,11 +809,10 @@ function KpiIntelligence() {
                 key={t}
                 type="button"
                 onClick={() => setActive(t)}
-                className={`w-full sm:w-auto rounded-full px-3 sm:px-5 py-2 text-[12px] sm:text-[13.5px] font-medium transition-colors border text-center ${
-                  isActive
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "border-white/15 text-white/60 hover:text-white/85 hover:border-white/30"
-                }`}
+                className={`w-full sm:w-auto rounded-full px-3 sm:px-5 py-2 text-[12px] sm:text-[13.5px] font-medium transition-colors border text-center ${isActive
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "border-white/15 text-white/60 hover:text-white/85 hover:border-white/30"
+                  }`}
               >
                 {t}
               </button>

@@ -23,19 +23,19 @@ const TEXT_DIM = "#636363";
 const HeroSection = () => (
   <section className="relative min-h-[620px] sm:min-h-[700px] flex items-center overflow-hidden" style={{ background: PANEL }}>
     <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
-    <div className="relative z-10 mx-auto w-full max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20 pt-32 sm:pt-36 pb-20">
+    <div className="relative z-10 mx-auto w-full max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20 pt-32 sm:pt-36 pb-20">
       <motion.div
         initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         className="mb-8 flex items-center gap-2"
       >
-        <span className="hidden sm:inline text-[12px] sm:text-[10px] font-semibold uppercase tracking-[0.22em] text-white/70 sm:text-white/55">CARBYNETECH</span>
+        <span className="hidden sm:inline text-[12px] sm:text-[10px] xl:text-[13px] font-semibold uppercase tracking-[0.22em] text-white/70 sm:text-white/55">CARBYNETECH</span>
         <span className="hidden sm:inline text-white/30">·</span>
-        <span className="text-[12px] sm:text-[10px] font-semibold sm:font-medium uppercase tracking-[0.22em] text-white/70 sm:text-white/55">SAP MANUFACTURING INTELLIGENCE</span>
+        <span className="text-[12px] sm:text-[10px] xl:text-[13px] font-semibold sm:font-medium uppercase tracking-[0.22em] text-white/70 sm:text-white/55">SAP MANUFACTURING INTELLIGENCE</span>
       </motion.div>
 
       <motion.h1
         initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-        className="text-[56px] sm:text-[64px] md:text-[80px] font-medium sm:font-light leading-[1.05] mb-6 max-w-3xl text-white"
+        className="text-[56px] sm:text-[64px] md:text-[80px] xl:text-[96px] font-medium sm:font-light leading-[1.05] mb-6 max-w-3xl xl:max-w-5xl text-white"
         style={{ fontFamily: SERIF, letterSpacing: "-0.01em" }}
       >
         Shopfloor Intelligence<br />Schedules That Think.
@@ -43,7 +43,7 @@ const HeroSection = () => (
 
       <motion.p
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.3 }}
-        className="text-[16px] sm:text-[14px] font-medium sm:font-normal max-w-xl leading-relaxed text-white/80 sm:text-white/55 mb-8"
+        className="text-[16px] sm:text-[14px] xl:text-[17px] font-medium sm:font-normal max-w-xl xl:max-w-2xl leading-relaxed text-white/80 sm:text-white/55 mb-8"
       >
         Carbynetech's AI-powered scheduling engine eliminates production chaos —
         connecting SAP S/4HANA, Excel, and your shopfloor into a single source of truth.
@@ -51,7 +51,7 @@ const HeroSection = () => (
 
       <motion.div
         initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.45 }}
-        className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 max-w-3xl"
+        className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 xl:gap-16 max-w-3xl xl:max-w-4xl"
       >
         {[
           { v: "40%", l: "Lower Inventory" },
@@ -59,8 +59,8 @@ const HeroSection = () => (
           { v: "03%", l: "Capacity Conflicts" },
         ].map((s) => (
           <div key={s.l}>
-            <div className="text-[38px] sm:text-[34px] font-normal sm:font-light text-white" style={{ fontFamily: SERIF }}>{s.v}</div>
-            <div className="text-[12px] sm:text-[11px] font-semibold sm:font-normal text-white/75 sm:text-white/45 uppercase tracking-[0.14em] mt-1">{s.l}</div>
+            <div className="text-[38px] sm:text-[34px] xl:text-[48px] font-normal sm:font-light text-white" style={{ fontFamily: SERIF }}>{s.v}</div>
+            <div className="text-[12px] sm:text-[11px] xl:text-[14px] font-semibold sm:font-normal text-white/75 sm:text-white/45 uppercase tracking-[0.14em] mt-1">{s.l}</div>
           </div>
         ))}
       </motion.div>
@@ -82,12 +82,12 @@ const WhyItMattersSection = () => {
 
   return (
     <section className="py-14 sm:py-16" style={{ background: PANEL }}>
-      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
-        <div className="text-[12px] sm:text-[10px] font-semibold sm:font-medium uppercase tracking-[0.22em] mb-4" style={{ color: "rgba(255,255,255,0.55)" }}>HOW IT WORKS</div>
-        <h2 className="text-[32px] sm:text-[36px] md:text-[42px] font-normal sm:font-light text-white leading-[1.05] mb-5" style={{ fontFamily: SERIF }}>
+      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
+        <div className="text-[12px] sm:text-[10px] xl:text-[13px] font-semibold sm:font-medium uppercase tracking-[0.22em] mb-4" style={{ color: "rgba(255,255,255,0.55)" }}>HOW IT WORKS</div>
+        <h2 className="text-[32px] sm:text-[36px] md:text-[42px] xl:text-[52px] font-normal sm:font-light text-white leading-[1.05] mb-5" style={{ fontFamily: SERIF }}>
           Why It Matters
         </h2>
-        <p className="text-[14px] sm:text-[14px] font-medium sm:font-normal mb-10 max-w-2xl" style={{ color: "rgba(255,255,255,0.7)" }}>
+        <p className="text-[14px] sm:text-[14px] xl:text-[16px] font-medium sm:font-normal mb-10 max-w-2xl" style={{ color: "rgba(255,255,255,0.7)" }}>
           Every hour of manual scheduling is an hour of value left on the shopfloor — while competitors optimize.
         </p>
 
@@ -162,7 +162,7 @@ const WhyItMattersSection = () => {
                   {it.t}
                 </div>
                 <p
-                  className="leading-relaxed max-w-xs transition-colors duration-300 font-medium sm:font-normal"
+                  className="leading-relaxed max-w-xs xl:max-w-sm transition-colors duration-300 font-medium sm:font-normal xl:text-[15px]"
                   style={{
                     color: active ? "#ffffff" : "rgba(255,255,255,0.7)",
                     fontSize: "13px",
@@ -196,51 +196,51 @@ const SchedulingEngineSection = () => {
 
   return (
     <section className="py-14 sm:py-16" style={{ background: "#FFFFFF" }}>
-      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
+      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
         <div className="mb-8 text-left">
-          <h2 className="text-[32px] sm:text-[36px] md:text-[42px] font-normal sm:font-light leading-[1.05] mb-4" style={{ fontFamily: SERIF, color: "#1a1a1a" }}>
+          <h2 className="text-[32px] sm:text-[36px] md:text-[42px] xl:text-[52px] font-normal sm:font-light leading-[1.05] mb-4" style={{ fontFamily: SERIF, color: "#1a1a1a" }}>
             The Scheduling Engine
           </h2>
-          <p className="text-[14px] sm:text-[13px] max-w-xl leading-relaxed font-medium" style={{ color: "rgba(0,0,0,0.75)" }}>
+          <p className="text-[14px] sm:text-[13px] xl:text-[16px] max-w-xl xl:max-w-2xl leading-relaxed font-medium" style={{ color: "rgba(0,0,0,0.75)" }}>
             Connect your data, define constraints, and let the engine find the optimal schedule across all your resources.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-9 max-w-[920px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-6 mb-9 max-w-[920px] xl:max-w-none mx-auto">
           {cards.map((c, i) => (
             <motion.div
               key={c.title}
               initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.08 }}
-              className="group rounded-2xl p-5 relative cursor-pointer transition-colors duration-300"
+              className="group rounded-2xl p-5 xl:p-7 relative cursor-pointer transition-colors duration-300"
               style={{ background: "#141414" }}
               onMouseEnter={(e) => (e.currentTarget.style.background = "#131B22")}
               onMouseLeave={(e) => (e.currentTarget.style.background = "#141414")}
             >
               <div className="flex items-center justify-between mb-6">
-                <span className="inline-block text-[13px] sm:text-[11px] font-semibold text-white/90 sm:text-white/75 uppercase tracking-wider transition-transform duration-300 origin-left group-hover:scale-[1.08]" style={{ fontFamily: "Inter, sans-serif" }}>{c.tag}</span>
+                <span className="inline-block text-[13px] sm:text-[11px] xl:text-[13px] font-semibold text-white/90 sm:text-white/75 uppercase tracking-wider transition-transform duration-300 origin-left group-hover:scale-[1.08]" style={{ fontFamily: "Inter, sans-serif" }}>{c.tag}</span>
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: c.dot }} />
               </div>
-              <h3 className="text-[20px] sm:text-[19px] font-semibold text-white mb-2.5 transition-transform duration-300 origin-left group-hover:scale-[1.06]" style={{ fontFamily: SERIF }}>{c.title}</h3>
-              <p className="text-[14px] sm:text-[13px] font-medium text-white/85 sm:text-white/70 leading-relaxed transition-all duration-300 origin-left group-hover:scale-[1.04] group-hover:text-white/90" style={{ fontFamily: "Inter, sans-serif" }}>{c.desc}</p>
+              <h3 className="text-[20px] sm:text-[19px] xl:text-[22px] font-semibold text-white mb-2.5 transition-transform duration-300 origin-left group-hover:scale-[1.06]" style={{ fontFamily: SERIF }}>{c.title}</h3>
+              <p className="text-[14px] sm:text-[13px] xl:text-[15px] font-medium text-white/85 sm:text-white/70 leading-relaxed transition-all duration-300 origin-left group-hover:scale-[1.04] group-hover:text-white/90" style={{ fontFamily: "Inter, sans-serif" }}>{c.desc}</p>
             </motion.div>
           ))}
         </div>
 
-        <div className="max-w-[920px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+        <div className="max-w-[920px] xl:max-w-none mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 xl:gap-10 mb-8">
           {stats.map((s) => (
             <div key={s.l} className="text-center md:text-left">
-              <div className="text-[40px] sm:text-[44px] font-medium sm:font-light leading-none" style={{ fontFamily: SERIF, color: "#1a1a1a" }}>{s.v}</div>
-              <div className="text-[15px] sm:text-[15px] font-semibold mt-2.5" style={{ color: "rgba(0,0,0,0.9)", fontFamily: SERIF }}>{s.l}</div>
+              <div className="text-[40px] sm:text-[44px] xl:text-[56px] font-medium sm:font-light leading-none" style={{ fontFamily: SERIF, color: "#1a1a1a" }}>{s.v}</div>
+              <div className="text-[15px] xl:text-[17px] font-semibold mt-2.5" style={{ color: "rgba(0,0,0,0.9)", fontFamily: SERIF }}>{s.l}</div>
             </div>
           ))}
         </div>
 
-        <div className="max-w-[920px] mx-auto grid grid-cols-2 md:flex md:flex-wrap gap-2 md:justify-between">
+        <div className="max-w-[920px] xl:max-w-none mx-auto grid grid-cols-2 md:flex md:flex-wrap gap-2 xl:gap-3 md:justify-between">
           {chips.map((c) => (
             <span
               key={c}
-              className="flex items-center justify-center text-center min-h-[48px] md:min-h-0 text-[13px] sm:text-[12px] font-semibold text-white px-5 py-2.5 rounded-md cursor-pointer transition-transform duration-300 origin-center hover:scale-[1.08]"
+              className="flex items-center justify-center text-center min-h-[48px] md:min-h-0 text-[13px] sm:text-[12px] xl:text-[14px] font-semibold text-white px-5 xl:px-7 py-2.5 xl:py-3 rounded-md cursor-pointer transition-transform duration-300 origin-center hover:scale-[1.08]"
               style={{ background: "#141414", fontFamily: SERIF }}
             >
               {c}
@@ -291,21 +291,21 @@ const ComplexitySection = () => {
   ];
   return (
     <section className="py-14 sm:py-16" style={{ background: PANEL }}>
-      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
-        <h2 className="text-[32px] sm:text-[36px] md:text-[42px] font-normal sm:font-light text-white leading-[1.05] mb-5 max-w-3xl" style={{ fontFamily: SERIF }}>
+      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
+        <h2 className="text-[32px] sm:text-[36px] md:text-[42px] xl:text-[52px] font-normal sm:font-light text-white leading-[1.05] mb-5 max-w-3xl xl:max-w-4xl" style={{ fontFamily: SERIF }}>
           Every Shopfloor Complexity.<br />Modelled and Solved.
         </h2>
-        <p className="text-[14px] sm:text-[13px] font-medium sm:font-normal text-white/70 sm:text-white/45 mb-9 max-w-xl">
+        <p className="text-[14px] sm:text-[13px] xl:text-[16px] font-medium sm:font-normal text-white/70 sm:text-white/45 mb-9 max-w-xl xl:max-w-2xl">
           From high-mix job shops to complex gas-based batch processing, our engine adapts to your manufacturing reality.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 max-w-[820px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 xl:gap-7 max-w-[820px] xl:max-w-none mx-auto">
           {cards.map((c, i) => (
             <motion.div
               key={c.title}
               initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.08 }}
               className="group rounded-xl p-5 sm:p-4 flex flex-col relative overflow-hidden transition-colors duration-300 hover:bg-[#10151B]"
-              style={{ background: "#0E1012", border: "0.8px solid #26282ECC", borderBottom: `3px solid ${c.color}`}}
+              style={{ background: "#0E1012", border: "0.8px solid #26282ECC", borderBottom: `3px solid ${c.color}` }}
             >
               <div className="flex items-center gap-2.5 mb-3">
                 <div
@@ -314,18 +314,18 @@ const ComplexitySection = () => {
                 >
                   <img src={c.iconSrc} alt="" className="w-4 h-4 object-contain transition-transform duration-300 group-hover:-rotate-[25deg]" />
                 </div>
-                <span className="text-[15px] sm:text-[14px] font-bold sm:font-semibold" style={{ color: c.color, fontFamily: "'Cormorant', serif" }}>{c.tag}</span>
+                <span className="text-[15px] sm:text-[14px] xl:text-[15px] font-bold sm:font-semibold" style={{ color: c.color, fontFamily: "'Cormorant', serif" }}>{c.tag}</span>
               </div>
-              <h3 className="text-[20px] sm:text-[20px] font-semibold text-white mb-3 transition-all duration-300 group-hover:text-[20.5px]" style={{ fontFamily: SERIF }}>{c.title}</h3>
+              <h3 className="text-[20px] sm:text-[20px] xl:text-[22px] font-semibold text-white mb-3 transition-all duration-300 group-hover:text-[20.5px]" style={{ fontFamily: SERIF }}>{c.title}</h3>
               <ul className="flex flex-col gap-1.5 mb-5">
                 {c.points.map((p) => (
-                  <li key={p} className="text-[15px] sm:text-[14px] font-medium text-white/85 sm:text-white/75 leading-relaxed flex gap-2" style={{ fontFamily: "'Cormorant', serif" }}>
+                  <li key={p} className="text-[15px] sm:text-[14px] xl:text-[15px] font-medium text-white/85 sm:text-white/75 leading-relaxed flex gap-2" style={{ fontFamily: "'Cormorant', serif" }}>
                     <span className="text-white/50 mt-0.5">•</span><span>{p}</span>
                   </li>
                 ))}
               </ul>
               <div className="mt-auto pt-2">
-                <span className="text-[15px] sm:text-[14px] font-bold sm:font-semibold transition-all duration-300 group-hover:text-[14.5px]" style={{ color: c.color, fontFamily: "'Cormorant', serif" }}>{c.footer}</span>
+                <span className="text-[15px] sm:text-[14px] xl:text-[16px] font-bold sm:font-semibold" style={{ color: c.color, fontFamily: "'Cormorant', serif" }}>{c.footer}</span>
               </div>
             </motion.div>
           ))}
@@ -364,23 +364,23 @@ const SolversSection = () => {
 
   return (
     <section className="py-14 sm:py-16" style={{ background: "#F4F2EC" }}>
-      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
+      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
         <div className="text-left mb-8">
-          <h2 className="text-[32px] sm:text-[36px] md:text-[42px] font-normal sm:font-light leading-[1.05] mb-4" style={{ fontFamily: SERIF, color: "#1a1a1a" }}>
+          <h2 className="text-[32px] sm:text-[36px] md:text-[42px] xl:text-[52px] font-normal sm:font-light leading-[1.05] mb-4" style={{ fontFamily: SERIF, color: "#1a1a1a" }}>
             Powered by World-Class Optimization Solvers
           </h2>
-          <p className="text-[14px] sm:text-[12px] font-medium sm:font-normal max-w-xl" style={{ color: "#000000" }}>
+          <p className="text-[14px] sm:text-[12px] xl:text-[16px] font-medium sm:font-normal max-w-xl xl:max-w-2xl" style={{ color: "#000000" }}>
             Three solver engines, one unified API. The right solver is auto-selected based on problem topology.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-[920px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-6 mb-8 max-w-[920px] xl:max-w-none mx-auto">
           {solvers.map((s, i) => (
             <motion.div
               key={s.title}
               initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.08 }}
-              className="group relative overflow-hidden rounded-2xl p-5"
+              className="group relative overflow-hidden rounded-2xl p-5 xl:p-7"
               style={{ border: "1px solid #242424", backgroundColor: "#111111" }}
             >
               <span
@@ -389,18 +389,18 @@ const SolversSection = () => {
                 style={{ background: "linear-gradient(180deg, #082A46 0%, #062641 98.08%)" }}
               />
               <div className="relative">
-              <img src={s.iconSrc} alt="" className="w-7 h-7 object-contain mb-4 transition-transform duration-300 group-hover:scale-110" />
-              <h3 className="text-[22px] sm:text-[22px] text-white mb-2 font-semibold transition-transform duration-300 origin-left group-hover:scale-[1.06]" style={{ fontFamily: SERIF }}>{s.title}</h3>
-              <p className="text-[15px] sm:text-[15px] font-medium text-white/90 sm:text-white/85 leading-relaxed mb-4 transition-transform duration-300 origin-left group-hover:scale-[1.04]" style={{ fontFamily: SERIF }}>{s.desc}</p>
-              <div className="text-[15px] sm:text-[15px] font-bold sm:font-semibold transition-transform duration-300 origin-left group-hover:scale-[1.06]" style={{ color: s.footerColor, fontFamily: SERIF }}>
-                {s.footer}
-              </div>
+                <img src={s.iconSrc} alt="" className="w-7 h-7 xl:w-9 xl:h-9 object-contain mb-4 transition-transform duration-300 group-hover:scale-110" />
+                <h3 className="text-[22px] xl:text-[26px] text-white mb-2 font-semibold transition-transform duration-300 origin-left group-hover:scale-[1.06]" style={{ fontFamily: SERIF }}>{s.title}</h3>
+                <p className="text-[15px] xl:text-[16px] font-medium text-white/90 sm:text-white/85 leading-relaxed mb-4 transition-transform duration-300 origin-left group-hover:scale-[1.04]" style={{ fontFamily: SERIF }}>{s.desc}</p>
+                <div className="text-[15px] xl:text-[16px] font-bold sm:font-semibold transition-transform duration-300 origin-left group-hover:scale-[1.06]" style={{ color: s.footerColor, fontFamily: SERIF }}>
+                  {s.footer}
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="max-w-[920px] mx-auto">
+        <div className="max-w-[920px] xl:max-w-none mx-auto">
           <div className="flex flex-wrap items-center justify-start gap-3 mb-4">
             {tags.map((t, i) => (
               <div key={t} className="flex items-center gap-3">
@@ -434,20 +434,20 @@ const IntegrationsSection = () => {
   ];
   return (
     <section className="py-14 sm:py-16" style={{ background: "#060604", fontFamily: "Inter, sans-serif" }}>
-      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
-        <h2 className="text-[32px] sm:text-[36px] md:text-[42px] font-normal sm:font-light text-white leading-[1.05] mb-4" style={{ fontFamily: "Cormorant, serif" }}>
+      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
+        <h2 className="text-[32px] sm:text-[36px] md:text-[42px] xl:text-[52px] font-normal sm:font-light text-white leading-[1.05] mb-4" style={{ fontFamily: "Cormorant, serif" }}>
           Works With What You Already Have
         </h2>
-        <p className="text-[14px] sm:text-[13px] font-medium sm:font-normal mb-9 max-w-xl" style={{ color: "#A3AAB8", fontFamily: "Inter, sans-serif" }}>
+        <p className="text-[14px] sm:text-[13px] xl:text-[16px] font-medium sm:font-normal mb-9 max-w-xl xl:max-w-2xl" style={{ color: "#A3AAB8", fontFamily: "Inter, sans-serif" }}>
           Seamless integration with your existing enterprise stack. No rip-and-replace required.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 xl:gap-6">
           {integrations.map((it, i) => (
             <motion.div
               key={it.title}
               initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
-              className="group rounded-xl p-6 transition-all duration-300 cursor-pointer"
+              className="group rounded-xl p-6 xl:p-7 transition-all duration-300 cursor-pointer"
               style={{
                 background: "#111111",
                 border: "1px solid #242424",
@@ -459,9 +459,9 @@ const IntegrationsSection = () => {
                 e.currentTarget.style.background = "#111111";
               }}
             >
-              <it.icon size={18} style={{ color: it.color }} className="mb-4 transition-transform duration-300 group-hover:scale-110 origin-left" />
-              <h3 className="text-white mb-2 font-semibold sm:font-medium transition-all duration-300 origin-left group-hover:scale-[1.06]" style={{ fontFamily: "Cormorant, serif", fontSize: "21px" }}>{it.title}</h3>
-              <p className="leading-relaxed font-medium sm:font-normal transition-all duration-300 origin-left group-hover:text-white group-hover:scale-[1.03]" style={{ color: "#A3AAB8", fontFamily: "Inter, sans-serif", fontSize: "14px" }}>{it.desc}</p>
+              <it.icon size={18} style={{ color: it.color }} className="mb-4 xl:w-6 xl:h-6 transition-transform duration-300 group-hover:scale-110 origin-left" />
+              <h3 className="text-white mb-2 font-semibold sm:font-medium xl:text-[24px] transition-all duration-300 origin-left group-hover:scale-[1.06]" style={{ fontFamily: "Cormorant, serif", fontSize: "21px" }}>{it.title}</h3>
+              <p className="leading-relaxed font-medium sm:font-normal xl:text-[15px] transition-all duration-300 origin-left group-hover:text-white group-hover:scale-[1.03]" style={{ color: "#A3AAB8", fontFamily: "Inter, sans-serif", fontSize: "14px" }}>{it.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -509,12 +509,12 @@ const TestimonialsSection = () => {
   ];
   return (
     <section className="py-14 sm:py-16 relative overflow-hidden" style={{ background: PANEL }}>
-      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
-        <div className="text-[13px] sm:text-[14px] font-medium uppercase tracking-[0.22em] text-white/55 mb-3">CUSTOMER STORIES</div>
-        <h2 className="text-[32px] sm:text-[36px] md:text-[42px] font-normal sm:font-light text-white leading-[1.05] mb-9" style={{ fontFamily: SERIF }}>
+      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
+        <div className="text-[13px] sm:text-[14px] xl:text-[14px] font-medium uppercase tracking-[0.22em] text-white/55 mb-3">CUSTOMER STORIES</div>
+        <h2 className="text-[32px] sm:text-[36px] md:text-[42px] xl:text-[52px] font-normal sm:font-light text-white leading-[1.05] mb-9" style={{ fontFamily: SERIF }}>
           In their own words
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative max-w-[980px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-8 relative max-w-[980px] xl:max-w-none mx-auto">
           {items.map((t, i) => {
             const isLight = t.bg === "#EEECE8";
             const muted = isLight ? "rgba(0,0,0,0.55)" : "rgba(255,255,255,0.55)";
@@ -583,7 +583,7 @@ const TestimonialsSection = () => {
 
                 {/* quote */}
                 <p
-                  className="text-[14px] leading-[1.55] mt-12 mb-6 relative z-10"
+                  className="text-[14px] xl:text-[16px] leading-[1.55] mt-12 mb-6 relative z-10"
                   style={{ color: t.fg, fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   {t.quote}
@@ -591,8 +591,8 @@ const TestimonialsSection = () => {
 
                 {/* name + role */}
                 <div className="mt-auto relative z-10" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                  <div className="text-[14px] sm:text-[12px] font-semibold mb-0.5" style={{ color: t.fg }}>{t.name}</div>
-                  <div className="text-[12px] sm:text-[10px] font-medium sm:font-normal" style={{ color: subtle }}>{t.role}</div>
+                  <div className="text-[14px] sm:text-[12px] xl:text-[16px] font-semibold mb-0.5" style={{ color: t.fg }}>{t.name}</div>
+                  <div className="text-[12px] sm:text-[10px] xl:text-[14px] font-medium sm:font-normal" style={{ color: subtle }}>{t.role}</div>
                 </div>
               </motion.div>
             );
@@ -606,28 +606,27 @@ const TestimonialsSection = () => {
 /* ---------- Transform CTA (LIGHT) ---------- */
 const TransformCTASection = () => (
   <section className="pt-24 sm:pt-28 pb-0" style={{ background: "#EAEAEA" }}>
-    <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20 text-center">
+    <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20 text-center">
       <h2
-        className="text-[34px] sm:text-[44px] md:text-[56px] leading-[1.1] mb-6"
+        className="text-[34px] sm:text-[44px] md:text-[56px] xl:text-[72px] leading-[1.1] mb-6"
         style={{ fontFamily: SERIF, color: "#111", letterSpacing: "-0.01em", fontWeight: 300 }}
       >
         Transform your scheduling<br />experience
       </h2>
-      <p className="text-[13px] mb-10" style={{ color: "rgba(0,0,0,0.65)" }}>
+      <p className="text-[13px] xl:text-[17px] mb-10" style={{ color: "rgba(0,0,0,0.65)" }}>
         Drive production efficiency and accelerate delivery with Carbynetech.
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center pb-24 sm:pb-28">
         <a
           href="/contact"
-
-          className="px-9 py-3.5 text-[11px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white"
+          className="px-9 py-3.5 text-[11px] xl:text-[13px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white"
           style={{ border: "1px solid rgba(0,0,0,0.35)" }}
         >
           Contact Us
         </a>
         <a
           href="#"
-          className="px-9 py-3.5 text-[11px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white"
+          className="px-9 py-3.5 text-[11px] xl:text-[13px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white"
           style={{ border: "1px solid rgba(0,0,0,0.35)" }}
         >
           Explore More
@@ -636,28 +635,28 @@ const TransformCTASection = () => (
     </div>
 
     {/* dark bottom bar — straddles CTA bg and footer */}
-    <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20 relative" style={{ marginBottom: "-70px" }}>
+    <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20 relative" style={{ marginBottom: "-70px" }}>
       <div
         className="rounded-2xl px-7 sm:px-10 py-7 sm:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 text-left relative z-10"
         style={{ background: "#1A1A1A" }}
       >
         <div>
-          <div className="text-[20px] sm:text-[22px] text-white mb-1.5 font-medium sm:font-light" style={{ fontFamily: SERIF }}>
+          <div className="text-[20px] sm:text-[22px] xl:text-[26px] text-white mb-1.5 font-medium sm:font-light" style={{ fontFamily: SERIF }}>
             Transform your production visibility
           </div>
-          <div className="text-[11px] text-white/55">
+          <div className="text-[11px] xl:text-[14px] text-white/55">
             Drive accountability and eliminate material waste with CarbyneTech.
           </div>
         </div>
         <div className="flex items-center gap-6 shrink-0">
           <a
             href="#"
-            className="px-6 py-3 text-[12px] font-medium rounded-full transition-transform hover:scale-105"
+            className="px-6 py-3 text-[12px] xl:text-[14px] font-medium rounded-full transition-transform hover:scale-105"
             style={{ background: "#fff", color: "#111" }}
           >
             Book a Consultant
           </a>
-          <a href="#" className="text-[12px] text-white/85 hover:text-white inline-flex items-center gap-1.5">
+          <a href="#" className="text-[12px] xl:text-[14px] text-white/85 hover:text-white inline-flex items-center gap-1.5">
             Explorer Services <span aria-hidden>↗</span>
           </a>
         </div>
@@ -668,7 +667,7 @@ const TransformCTASection = () => (
 
 const FactoryFiniteScheduling = () => (
   <div className="min-h-screen w-full" style={{ background: PANEL, fontFamily: "'Space Grotesk', sans-serif" }}>
-    <div className="mx-auto w-full max-w-[1280px] overflow-hidden" style={{ background: PANEL }}>
+    <div className="mx-auto w-full overflow-hidden" style={{ background: PANEL }}>
       <Navbar />
       <HeroSection />
       <WhyItMattersSection />

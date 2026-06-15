@@ -572,31 +572,31 @@ const ValuesSection = () => {
   ];
   return (
     <section className="py-12 sm:py-16" style={{ background: "#202E3C" }}>
-      <div className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
+      <div className="max-w-[1200px] xl:max-w-[1440px] mx-auto px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
         <div className="mb-10 sm:mb-14">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-6 h-px" style={{ background: LIME }} />
             <span className="text-[15px] tracking-[0.2em]" style={{ color: LIME }}>Core Values</span>
           </div>
-          <h2 className="text-[26px] sm:text-[32px] md:text-[38px] font-medium leading-tight mb-5 sm:mb-6 text-white" style={{ fontFamily: GROTESK }}>
+          <h2 className="text-[26px] sm:text-[32px] md:text-[38px] xl:text-[46px] font-medium leading-tight mb-5 sm:mb-6 text-white" style={{ fontFamily: GROTESK }}>
             Built on Principles That Scale.
           </h2>
-          <p className="text-[16px] sm:text-[13px] leading-relaxed max-w-4xl" style={{ color: "rgba(255,255,255,0.5)" }}>
+          <p className="text-[16px] sm:text-[13px] xl:text-[15px] leading-relaxed max-w-4xl" style={{ color: "rgba(255,255,255,0.5)" }}>
             Vision Analytics is engineered for the factory floor — not the lab. Every line of code, every model, and every deployment is
             grounded in four core values that keep our systems reliable, innovative, customer-aligned, and continuously evolving.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-[900px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 xl:gap-5 max-w-[900px] xl:max-w-none">
           {items.map((it) => {
             const Icon = it.icon;
             return (
-              <div key={it.t} className="rounded-md p-3 sm:p-4" style={{ background: "#09091199", border: "1px solid rgba(255,255,255,0.08)" }}>
-                <div className="flex items-center gap-2 mb-2">
-                  <Icon className="w-3.5 h-3.5 shrink-0" style={{ color: "rgba(255,255,255,0.5)" }} strokeWidth={1.6} />
-                  <h3 className="text-white font-semibold text-[15px] sm:text-[12px]">{it.t}</h3>
+              <div key={it.t} className="rounded-md p-3 sm:p-4 xl:p-6" style={{ background: "#09091199", border: "1px solid rgba(255,255,255,0.08)" }}>
+                <div className="flex items-center gap-2 mb-2 xl:mb-3">
+                  <Icon className="w-3.5 h-3.5 xl:w-5 xl:h-5 shrink-0" style={{ color: "rgba(255,255,255,0.5)" }} strokeWidth={1.6} />
+                  <h3 className="text-white font-semibold text-[15px] sm:text-[12px] xl:text-[15px]">{it.t}</h3>
                 </div>
-                <p className="text-[14px] sm:text-[11px] leading-snug pl-[22px]" style={{ color: "rgba(255,255,255,0.45)" }}>{it.d}</p>
+                <p className="text-[14px] sm:text-[11px] xl:text-[13px] leading-snug xl:leading-relaxed pl-[22px] xl:pl-7" style={{ color: "rgba(255,255,255,0.45)" }}>{it.d}</p>
               </div>
             );
           })}

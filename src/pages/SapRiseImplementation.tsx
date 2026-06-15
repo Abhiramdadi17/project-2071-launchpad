@@ -95,18 +95,18 @@ const ChallengesSection = () => {
   ];
   return (
     <section className="py-10 sm:py-12 lg:py-14" style={{ background: "#000" }}>
-      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
+      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
         <Eyebrow text="Enterprise Risks" color={HERO_LIME} />
         <h2
-          className="text-[24px] sm:text-[30px] lg:text-[36px] font-medium text-white leading-[1.1] mb-3"
+          className="text-[24px] sm:text-[30px] lg:text-[36px] xl:text-[44px] font-medium text-white leading-[1.1] mb-3"
           style={{ fontFamily: "'Space Grotesk', sans-serif" }}
         >
           Challenges That Derail Transformations
         </h2>
-        <p className="text-[13px] sm:text-[14px] mb-6 sm:mb-8" style={{ color: "#8799AB" }}>
+        <p className="text-[13px] sm:text-[14px] xl:text-[15px] mb-6 sm:mb-8" style={{ color: "#8799AB" }}>
           The hidden risks that erode SAP programmes before they deliver value.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3 xl:gap-5 justify-items-center xl:justify-items-stretch">
           {items.map((it, i) => (
             <motion.div
               key={it.title}
@@ -115,7 +115,7 @@ const ChallengesSection = () => {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -6 }}
-              className="group rounded-md px-3 py-4 sm:px-4 sm:py-5 flex flex-col items-center text-center cursor-default transition-colors duration-300 w-full max-w-[260px]"
+              className="group rounded-md px-3 py-4 sm:px-4 sm:py-5 xl:px-6 xl:py-7 flex flex-col items-center text-center cursor-default transition-colors duration-300 w-full max-w-[260px] xl:max-w-none"
               style={{
                 background: "#13161D",
                 border: "0.8px solid #1E232C",
@@ -136,12 +136,12 @@ const ChallengesSection = () => {
                 <it.icon size={16} className="text-white transition-colors duration-300 group-hover:text-[#C8FF01]" strokeWidth={1.6} />
               </div>
               <h3
-                className="text-[14px] sm:text-[15px] font-semibold mb-1.5"
+                className="text-[14px] sm:text-[15px] xl:text-[17px] font-semibold mb-1.5"
                 style={{ color: it.titleColor, fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 {it.title}
               </h3>
-              <p className="text-[11.5px] sm:text-[12px] leading-snug" style={{ color: "#8799AB" }}>
+              <p className="text-[11.5px] sm:text-[12px] xl:text-[13px] leading-snug xl:leading-relaxed" style={{ color: "#8799AB" }}>
                 {it.desc}
               </p>
             </motion.div>

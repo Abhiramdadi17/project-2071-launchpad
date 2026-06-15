@@ -62,14 +62,14 @@ const StructuredPathSection = () => {
   ];
   return (
     <section className="py-12 sm:py-14 md:py-16" style={{ background: "#070A07" }}>
-      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
-        <h2 className="text-[28px] sm:text-[32px] md:text-[40px] font-medium text-white mb-3 leading-[1.15] max-w-3xl" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
+        <h2 className="text-[28px] sm:text-[32px] md:text-[40px] xl:text-[46px] font-medium text-white mb-3 leading-[1.15] max-w-3xl xl:max-w-4xl" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           A Structured Path from <br className="hidden sm:block" />Adoption Gap to Realized Value
         </h2>
-        <p className="text-[14px] sm:text-[13px] mb-8 sm:mb-10 max-w-xl leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+        <p className="text-[14px] sm:text-[13px] xl:text-[15px] mb-8 sm:mb-10 max-w-xl xl:max-w-2xl leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
           Four integrated stages. One measurable outcome: S/4HANA ROI you can report to your board.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-2 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-2 xl:gap-5 justify-items-center xl:justify-items-stretch">
           {stages.map((s, i) => (
             <motion.div
               key={s.tag}
@@ -78,18 +78,18 @@ const StructuredPathSection = () => {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -6 }}
-              className="group p-5 sm:p-6 text-center cursor-pointer w-full max-w-[230px]"
+              className="group p-5 sm:p-6 xl:p-7 text-center cursor-pointer w-full max-w-[230px] xl:max-w-none"
               style={{ background: "#05070C", border: "1.5px solid #0D121A", borderRadius: "4px" }}
             >
-              <s.icon className="w-6 h-6 mx-auto mb-5 text-white transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} />
-              <div className="text-[13px] sm:text-[11px] font-semibold tracking-[0.22em] mb-2 text-white">{s.tag}</div>
+              <s.icon className="w-6 h-6 xl:w-7 xl:h-7 mx-auto mb-5 text-white transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} />
+              <div className="text-[13px] sm:text-[11px] xl:text-[13px] font-semibold tracking-[0.22em] mb-2 text-white">{s.tag}</div>
               <div
-                className="text-[15px] sm:text-[13px] mb-3"
+                className="text-[15px] sm:text-[13px] xl:text-[15px] mb-3"
                 style={{ color: "#7F8F43", fontFamily: "'JetBrains Mono', monospace" }}
               >
                 {s.title}
               </div>
-              <p className="text-[14px] sm:text-[12px] leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>{s.desc}</p>
+              <p className="text-[14px] sm:text-[12px] xl:text-[13px] leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>{s.desc}</p>
             </motion.div>
           ))}
         </div>

@@ -33,7 +33,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="relative z-10 mx-auto w-full max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20 pt-28 sm:pt-32 pb-16">
+      <div className="relative z-10 mx-auto w-full max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20 pt-28 sm:pt-32 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 mb-6 sm:mb-8"
@@ -82,7 +82,7 @@ const HeroSection = () => {
 const Eyebrow = ({ text }: { text: string }) => (
   <div className="flex items-center justify-center gap-3 mb-4">
     <div className="w-8 h-px" style={{ background: LIME }} />
-    <span className="text-[15px] sm:text-[12px] font-medium tracking-wide" style={{ color: LIME }}>{text}</span>
+    <span className="text-[15px] sm:text-[12px] xl:text-[14px] font-medium tracking-wide" style={{ color: LIME }}>{text}</span>
   </div>
 );
 
@@ -136,13 +136,13 @@ const EvolutionSection = () => {
   const [active, setActive] = useState("intelligent");
   return (
     <section className="py-8 sm:py-10" style={{ background: "#060604" }}>
-      <div className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
+      <div className="max-w-[1200px] xl:max-w-[1440px] mx-auto px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
         <div className="text-center mb-7">
           <Eyebrow text="The AMS Evolution" />
-          <h2 className="text-[36px] sm:text-[40px] md:text-[48px] font-medium leading-tight text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-[36px] sm:text-[40px] md:text-[48px] xl:text-[54px] font-medium leading-tight text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             SAP Support Has Changed Forever
           </h2>
-          <p className="mt-3 text-[17px] sm:text-[14px]" style={{ color: "rgba(255,255,255,0.5)" }}>
+          <p className="mt-3 text-[17px] sm:text-[14px] xl:text-[16px]" style={{ color: "rgba(255,255,255,0.5)" }}>
             Has your provider kept up?
           </p>
         </div>
@@ -156,7 +156,7 @@ const EvolutionSection = () => {
               <button
                 key={t.key}
                 onClick={() => setActive(t.key)}
-                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 text-[16px] sm:text-[13px] font-medium rounded-md transition-all"
+                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 text-[16px] sm:text-[13px] xl:text-[15px] font-medium rounded-md transition-all"
                 style={{
                   background: isActive ? "#21C45D" : "#1E2229",
                   color: isActive ? "#000" : "#FFFFFF",
@@ -171,14 +171,14 @@ const EvolutionSection = () => {
           })}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[820px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[820px] xl:max-w-none mx-auto">
           {tabsData.map((t) => {
             const highlighted = t.key === active;
             const CardIcon = t.icon;
             return (
               <div
                 key={t.key}
-                className="p-5 rounded-xl transition-all"
+                className="p-5 xl:p-7 rounded-xl transition-all"
                 style={{
                   background: highlighted ? "#121F17" : "#1A1D23",
                   border: highlighted ? "0.5px solid rgba(33,196,93,0.5)" : "1px solid #23262D",
@@ -189,14 +189,14 @@ const EvolutionSection = () => {
                   <div className="w-8 h-8 rounded-md flex items-center justify-center shrink-0" style={{ background: highlighted ? "#21C45D" : "#23272F" }}>
                     <CardIcon className="w-3.5 h-3.5" style={{ color: highlighted ? "#000" : "#FFFFFF" }} />
                   </div>
-                  <h3 className="text-white text-[17px] sm:text-[14px] font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <h3 className="text-white text-[17px] sm:text-[14px] xl:text-[17px] font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                     {t.title}
-                    <span className="ml-1.5 text-[14px] sm:text-[11px] font-normal" style={{ color: "#8799AB" }}>({t.badge})</span>
+                    <span className="ml-1.5 text-[14px] sm:text-[11px] xl:text-[13px] font-normal" style={{ color: "#8799AB" }}>({t.badge})</span>
                   </h3>
                 </div>
                 <ul className="space-y-2.5">
                   {t.items.map((it) => (
-                    <li key={it} className="flex gap-2 text-[15px] sm:text-[12px] leading-relaxed" style={{ color: "#8799AB" }}>
+                    <li key={it} className="flex gap-2 text-[15px] sm:text-[12px] xl:text-[14px] leading-relaxed" style={{ color: "#8799AB" }}>
                       <span style={{ color: "#8799AB" }}>•</span>{it}
                     </li>
                   ))}
@@ -246,20 +246,20 @@ const forcesData = [
 
 const ForcesSection = () => (
   <section className="py-8 sm:py-10" style={{ background: "#15181E" }}>
-    <div className="max-w-[1080px] mx-auto px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
+    <div className="max-w-[1080px] xl:max-w-[1440px] mx-auto px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
       <div className="text-center mb-8">
         <div className="flex items-center justify-center gap-3 mb-4">
           <div className="w-6 h-px" style={{ background: LIME }} />
-          <span className="text-[15px] sm:text-[12px] font-medium" style={{ color: LIME, fontFamily: "'Space Grotesk', sans-serif" }}>
+          <span className="text-[15px] sm:text-[12px] xl:text-[14px] font-medium" style={{ color: LIME, fontFamily: "'Space Grotesk', sans-serif" }}>
             New Trends in SAP AMS
           </span>
         </div>
-        <h2 className="text-[36px] sm:text-[40px] md:text-[48px] font-medium leading-[1.1] text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <h2 className="text-[36px] sm:text-[40px] md:text-[48px] xl:text-[54px] font-medium leading-[1.1] text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           The Forces Reshaping<br />Application Management
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[900px] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 xl:gap-6 max-w-[900px] xl:max-w-none mx-auto">
         {forcesData.map((f) => (
           <div
             key={f.title}
@@ -269,25 +269,25 @@ const ForcesSection = () => (
               <span className="text-[24px] font-semibold leading-none" style={{ color: LIME, fontFamily: "'Space Grotesk', sans-serif" }}>
                 {f.stat}
               </span>
-              <span className="text-[14px] sm:text-[11px]" style={{ color: "#8799AB" }}>{f.label}</span>
+              <span className="text-[14px] sm:text-[11px] xl:text-[14px]" style={{ color: "#8799AB" }}>{f.label}</span>
             </div>
 
             <div className="flex items-center gap-2 px-5 pt-3 mb-3">
-              <div className="w-6 h-6 rounded-md flex items-center justify-center shrink-0" style={{ background: "#23272F" }}>
-                <f.icon className="w-3 h-3" style={{ color: "#FFFFFF" }} />
+              <div className="w-6 h-6 xl:w-8 xl:h-8 rounded-md flex items-center justify-center shrink-0" style={{ background: "#23272F" }}>
+                <f.icon className="w-3 h-3 xl:w-4 xl:h-4" style={{ color: "#FFFFFF" }} />
               </div>
-              <h3 className="text-white text-[16px] sm:text-[12px] font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <h3 className="text-white text-[16px] sm:text-[12px] xl:text-[16px] font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 {f.title}
               </h3>
             </div>
 
-            <p className="px-5 text-[15px] sm:text-[11px] leading-relaxed mb-3" style={{ color: "#8799AB" }}>
+            <p className="px-5 text-[15px] sm:text-[11px] xl:text-[14px] leading-relaxed mb-3" style={{ color: "#8799AB" }}>
               {f.desc}
             </p>
 
             <ul className="space-y-1 px-5 pb-5">
               {f.bullets.map((b) => (
-                <li key={b} className="flex gap-2 text-[14px] sm:text-[10.5px] leading-relaxed" style={{ color: "#8799AB" }}>
+                <li key={b} className="flex gap-2 text-[14px] sm:text-[10.5px] xl:text-[13px] leading-relaxed" style={{ color: "#8799AB" }}>
                   <span>•</span>{b}
                 </li>
               ))}
@@ -309,23 +309,23 @@ const coreCards = [
 
 const CleanCoreSection = () => (
   <section className="py-8 sm:py-10" style={{ background: "#060604" }}>
-    <div className="max-w-[1100px] mx-auto px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
+    <div className="max-w-[1100px] xl:max-w-[1440px] mx-auto px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
       <div className="text-center mb-7">
         <Eyebrow text="Clean Core Strategy" />
-        <h2 className="text-[36px] sm:text-[40px] md:text-[48px] font-medium leading-[1.1] text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <h2 className="text-[36px] sm:text-[40px] md:text-[48px] xl:text-[54px] font-medium leading-[1.1] text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Protect Your SAP Core.<br />Extend Without Compromise.
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[960px] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 xl:gap-6 max-w-[960px] xl:max-w-none mx-auto">
         {coreCards.map((c) => (
-          <div key={c.title} className="p-5 rounded-xl flex gap-3.5 bg-[#1A1D23] border border-[#23262D] transition-colors duration-300 hover:bg-[#21252E] hover:border-[#2E3540]">
-            <div className="w-9 h-9 rounded-md flex items-center justify-center shrink-0" style={{ background: "#1A2E28" }}>
-              <c.icon className="w-4 h-4" style={{ color: "#FFFFFF" }} />
+          <div key={c.title} className="p-5 xl:p-7 rounded-xl flex gap-3.5 xl:gap-5 bg-[#1A1D23] border border-[#23262D] transition-colors duration-300 hover:bg-[#21252E] hover:border-[#2E3540]">
+            <div className="w-9 h-9 xl:w-12 xl:h-12 rounded-md flex items-center justify-center shrink-0" style={{ background: "#1A2E28" }}>
+              <c.icon className="w-4 h-4 xl:w-6 xl:h-6" style={{ color: "#FFFFFF" }} />
             </div>
             <div>
-              <h3 className="text-white text-[17px] sm:text-[14px] font-semibold mb-1.5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{c.title}</h3>
-              <p className="text-[15px] sm:text-[12px] leading-relaxed" style={{ color: "#8799AB" }}>{c.desc}</p>
+              <h3 className="text-white text-[17px] sm:text-[14px] xl:text-[18px] font-semibold mb-1.5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{c.title}</h3>
+              <p className="text-[15px] sm:text-[12px] xl:text-[15px] leading-relaxed" style={{ color: "#8799AB" }}>{c.desc}</p>
             </div>
           </div>
         ))}
@@ -344,27 +344,27 @@ const businessImpactStats = [
 
 const BusinessImpactSection = () => (
   <section className="py-8 sm:py-10" style={{ background: "#10231C" }}>
-    <div className="max-w-[1100px] mx-auto px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
+    <div className="max-w-[1100px] xl:max-w-[1440px] mx-auto px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
       <div className="text-center mb-8">
-        <h3 className="text-[22px] sm:text-[18px] font-semibold" style={{ color: LIME, fontFamily: "'Space Grotesk', sans-serif" }}>
+        <h3 className="text-[22px] sm:text-[18px] xl:text-[26px] font-semibold" style={{ color: LIME, fontFamily: "'Space Grotesk', sans-serif" }}>
           Business Impact
         </h3>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-[1000px] mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 xl:gap-6 max-w-[1000px] xl:max-w-none mx-auto">
         {businessImpactStats.map((s) => (
           <div
             key={s.label}
-            className="rounded-xl p-5"
+            className="rounded-xl p-5 xl:p-8"
             style={{
               background: "linear-gradient(98.29deg, #224A35 3.65%, #195F3D 94.22%)",
               border: "1px solid rgba(178,242,21,0.18)",
             }}
           >
-            <div className="text-[36px] sm:text-[32px] font-semibold leading-none mb-2" style={{ color: LIME, fontFamily: "'Space Grotesk', sans-serif" }}>
+            <div className="text-[36px] sm:text-[32px] xl:text-[42px] font-semibold leading-none mb-2" style={{ color: LIME, fontFamily: "'Space Grotesk', sans-serif" }}>
               {s.value}
             </div>
-            <div className="text-[15px] sm:text-[12px] mb-3" style={{ color: "rgba(255,255,255,0.85)" }}>
+            <div className="text-[15px] sm:text-[12px] xl:text-[15px] mb-3" style={{ color: "rgba(255,255,255,0.85)" }}>
               {s.label}
             </div>
             <div className="h-px w-full" style={{ background: "linear-gradient(to right, rgba(178,242,21,0.55) 0%, rgba(178,242,21,0.55) 50%, rgba(255,255,255,0.08) 50%)" }} />
@@ -386,19 +386,19 @@ const journeySteps = [
 
 const JourneySection = () => (
   <section className="py-8 sm:py-10" style={{ background: "#060604" }}>
-    <div className="max-w-[1200px] mx-auto px-4">
+    <div className="max-w-[1200px] xl:max-w-[1440px] mx-auto px-4 xl:px-16">
       <div className="text-center mb-8">
         <Eyebrow text="S/4HANA Migration" />
-        <h2 className="text-[36px] sm:text-[40px] md:text-[48px] font-medium leading-[1.1] text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <h2 className="text-[36px] sm:text-[40px] md:text-[48px] xl:text-[54px] font-medium leading-[1.1] text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Supporting Your<br />Transformation Journey
         </h2>
-        <p className="mt-4 text-[17px] sm:text-[14px]" style={{ color: "#8799AB" }}>
+        <p className="mt-4 text-[17px] sm:text-[14px] xl:text-[16px]" style={{ color: "#8799AB" }}>
           End-to-end migration support ensuring stability and continuity at every stage.
         </p>
       </div>
 
       <motion.div
-        className="grid grid-cols-2 md:grid-cols-5 gap-5 max-w-[980px] mx-auto"
+        className="grid grid-cols-2 md:grid-cols-5 gap-5 xl:gap-8 max-w-[980px] xl:max-w-none mx-auto"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
@@ -421,11 +421,11 @@ const JourneySection = () => (
             >
               <s.icon className="w-4 h-4 transition-colors duration-300 group-hover:text-[#B2F215]" style={{ color: "#FFFFFF" }} />
             </div>
-            <div className="text-[14px] sm:text-[10.5px] mb-1" style={{ color: "#21C45D", fontFamily: "'Space Grotesk', sans-serif" }}>
+            <div className="text-[14px] sm:text-[10.5px] xl:text-[13px] mb-1" style={{ color: "#21C45D", fontFamily: "'Space Grotesk', sans-serif" }}>
               Step {i + 1} <span style={{ color: "#21C45D", opacity: 0.85 }}>({s.phase})</span>
             </div>
-            <h3 className="text-white text-[15px] sm:text-[13px] font-semibold mb-1.5 transition-colors duration-300 group-hover:text-[#B2F215]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{s.title}</h3>
-            <p className="text-[14px] sm:text-[10.5px] leading-relaxed mx-auto max-w-[160px]" style={{ color: "#8799AB" }}>{s.desc}</p>
+            <h3 className="text-white text-[15px] sm:text-[13px] xl:text-[16px] font-semibold mb-1.5 transition-colors duration-300 group-hover:text-[#B2F215]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{s.title}</h3>
+            <p className="text-[14px] sm:text-[10.5px] xl:text-[13px] leading-relaxed mx-auto max-w-[160px] xl:max-w-[200px]" style={{ color: "#8799AB" }}>{s.desc}</p>
           </motion.div>
         ))}
       </motion.div>
@@ -474,19 +474,19 @@ const plans = [
 
 const PlansSection = () => (
   <section className="py-8 sm:py-10" style={{ background: "#15181E" }}>
-    <div className="max-w-[920px] mx-auto px-5 sm:px-6 md:px-8">
+    <div className="max-w-[920px] xl:max-w-[1200px] mx-auto px-5 sm:px-6 md:px-8 xl:px-16">
       <div className="text-center mb-8">
         <Eyebrow text="Service Tiers" />
-        <h2 className="text-[36px] sm:text-[40px] md:text-[48px] font-medium leading-tight text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <h2 className="text-[36px] sm:text-[40px] md:text-[48px] xl:text-[54px] font-medium leading-tight text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Flexible Plans for Every Need
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 xl:gap-6 items-stretch">
         {plans.map((p) => (
           <div
             key={p.name}
-            className="rounded-lg p-5 flex flex-col h-full"
+            className="rounded-lg p-5 xl:p-8 flex flex-col h-full"
             style={{
               background: p.featured ? "#21C45D" : "#1A1D23",
               border: p.featured ? "1px solid transparent" : "1px solid #23262D",
@@ -495,19 +495,19 @@ const PlansSection = () => (
               paddingBottom: p.featured ? "28px" : undefined,
             }}
           >
-            <div className="text-[14px] sm:text-[10px] font-medium mb-2" style={{ color: p.featured ? "#15181E" : "#25F973" }}>{p.badge}</div>
-            <h3 className="text-[22px] sm:text-[18px] font-semibold mb-2" style={{ color: p.featured ? "#15181E" : "#fff", fontFamily: "'Space Grotesk', sans-serif" }}>{p.name}</h3>
-            <p className="text-[15px] sm:text-[11.5px] leading-relaxed mb-4" style={{ color: p.featured ? "#15181E" : "#8799AB" }}>{p.desc}</p>
+            <div className="text-[14px] sm:text-[10px] xl:text-[13px] font-medium mb-2" style={{ color: p.featured ? "#15181E" : "#25F973" }}>{p.badge}</div>
+            <h3 className="text-[22px] sm:text-[18px] xl:text-[24px] font-semibold mb-2" style={{ color: p.featured ? "#15181E" : "#fff", fontFamily: "'Space Grotesk', sans-serif" }}>{p.name}</h3>
+            <p className="text-[15px] sm:text-[11.5px] xl:text-[14px] leading-relaxed mb-4" style={{ color: p.featured ? "#15181E" : "#8799AB" }}>{p.desc}</p>
             <ul className="space-y-2 flex-1 mb-5">
               {p.items.map((it) => (
-                <li key={it} className="flex gap-2 text-[15px] sm:text-[11.5px] leading-relaxed" style={{ color: p.featured ? "#15181E" : "#8799AB" }}>
+                <li key={it} className="flex gap-2 text-[15px] sm:text-[11.5px] xl:text-[14px] leading-relaxed" style={{ color: p.featured ? "#15181E" : "#8799AB" }}>
                   <span className="mt-[6px] w-1 h-1 rounded-full shrink-0" style={{ background: p.featured ? "#15181E" : "#8799AB" }} />
                   <span>{it}</span>
                 </li>
               ))}
             </ul>
             <button
-              className="w-full py-2.5 text-[16px] sm:text-[12px] font-medium rounded-md transition-all mt-auto"
+              className="w-full py-2.5 text-[16px] sm:text-[12px] xl:text-[15px] font-medium rounded-md transition-all mt-auto"
               style={{
                 background: p.featured ? "#0E1115" : "#21C45D",
                 color: p.featured ? "#21C45D" : "#000",
@@ -532,23 +532,23 @@ const valueCards = [
 
 const ValueSection = () => (
   <section className="py-8 sm:py-10" style={{ background: "#060604" }}>
-    <div className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
+    <div className="max-w-[1200px] xl:max-w-[1440px] mx-auto px-5 sm:px-8 md:px-14 lg:px-20 xl:px-16 2xl:px-20">
       <div className="text-center mb-7">
         <Eyebrow text="Customer Value" />
-        <h2 className="text-[36px] sm:text-[40px] md:text-[48px] font-medium leading-tight text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <h2 className="text-[36px] sm:text-[40px] md:text-[48px] xl:text-[54px] font-medium leading-tight text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Everything You Need. All in One Place.
         </h2>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-3">
+      <div className="flex flex-wrap justify-center gap-3 xl:gap-5">
         {valueCards.map((c) => (
-          <div key={c.title} className="group p-4 rounded-lg text-center w-[210px] bg-[#1A1D23] border border-[#23262D] transition-colors duration-300 hover:bg-[#21252E] hover:border-[#2E3540]">
-            <div className="mx-auto w-9 h-9 rounded-md flex items-center justify-center mb-3" style={{ background: "#1A2E28" }}>
-              <c.icon className="w-3.5 h-3.5" style={{ color: "#fff" }} />
+          <div key={c.title} className="group p-4 xl:p-6 rounded-lg text-center w-[210px] xl:w-[280px] bg-[#1A1D23] border border-[#23262D] transition-colors duration-300 hover:bg-[#21252E] hover:border-[#2E3540]">
+            <div className="mx-auto w-9 h-9 xl:w-12 xl:h-12 rounded-md flex items-center justify-center mb-3" style={{ background: "#1A2E28" }}>
+              <c.icon className="w-3.5 h-3.5 xl:w-5 xl:h-5" style={{ color: "#fff" }} />
             </div>
-            <div className="text-[13px] sm:text-[9px] uppercase tracking-wider mb-2" style={{ color: "#21C45D" }}>{c.badge}</div>
-            <h3 className="text-white text-[16px] sm:text-[12px] font-semibold mb-2 whitespace-nowrap transition-all duration-300 group-hover:sm:text-[13px] group-hover:text-[#B2F215]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{c.title}</h3>
-            <p className="text-[14px] sm:text-[10.5px] leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>{c.desc}</p>
+            <div className="text-[13px] sm:text-[9px] xl:text-[12px] uppercase tracking-wider mb-2" style={{ color: "#21C45D" }}>{c.badge}</div>
+            <h3 className="text-white text-[16px] sm:text-[12px] xl:text-[16px] font-semibold mb-2 transition-all duration-300 group-hover:text-[#B2F215]" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{c.title}</h3>
+            <p className="text-[14px] sm:text-[10.5px] xl:text-[13px] leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>{c.desc}</p>
           </div>
         ))}
       </div>
