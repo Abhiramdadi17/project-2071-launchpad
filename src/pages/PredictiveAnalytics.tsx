@@ -14,7 +14,7 @@ import card3Bg from "@/assets/accelerators/accel-3.png";
 import card4Bg from "@/assets/accelerators/accel-4.png";
 import card5Bg from "@/assets/accelerators/accel-5.png";
 import card6Bg from "@/assets/accelerators/accel-6.png";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const heroStats = [
@@ -579,6 +579,8 @@ const PredictiveAnalytics = () => {
 
 const ServiceAcceleratorsSection = () => {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
   const scrollBy = (dir: 1 | -1) => {
     const el = scrollerRef.current;
     if (!el) return;
@@ -586,6 +588,21 @@ const ServiceAcceleratorsSection = () => {
     const delta = card ? card.offsetWidth + 16 : 280;
     el.scrollBy({ left: dir * delta, behavior: "smooth" });
   };
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const updateEdges = () => {
+      setAtStart(el.scrollLeft <= 1);
+      setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 1);
+    };
+    updateEdges();
+    el.addEventListener("scroll", updateEdges, { passive: true });
+    window.addEventListener("resize", updateEdges);
+    return () => {
+      el.removeEventListener("scroll", updateEdges);
+      window.removeEventListener("resize", updateEdges);
+    };
+  }, []);
   return (
     <section
       className="relative py-8 sm:py-10 overflow-hidden"
@@ -628,14 +645,20 @@ const ServiceAcceleratorsSection = () => {
 
       <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
         <div className="relative">
-          {/* Edge fade shadows — sit on the scroller's edges */}
+          {/* Edge fade shadows — sit on the scroller's edges, hidden once that edge is reached */}
           <div
-            className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-8 sm:w-10 md:w-14 lg:w-16 xl:w-20"
-            style={{ background: "linear-gradient(to right, #080B14 0%, rgba(8,11,20,0.85) 40%, rgba(8,11,20,0) 100%)" }}
+            className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-8 sm:w-10 md:w-14 lg:w-16 xl:w-20 transition-opacity duration-300"
+            style={{
+              background: "linear-gradient(to right, #080B14 0%, rgba(8,11,20,0.85) 40%, rgba(8,11,20,0) 100%)",
+              opacity: atStart ? 0 : 1,
+            }}
           />
           <div
-            className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-8 sm:w-10 md:w-14 lg:w-16 xl:w-20"
-            style={{ background: "linear-gradient(to left, #080B14 0%, rgba(8,11,20,0.85) 40%, rgba(8,11,20,0) 100%)" }}
+            className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-8 sm:w-10 md:w-14 lg:w-16 xl:w-20 transition-opacity duration-300"
+            style={{
+              background: "linear-gradient(to left, #080B14 0%, rgba(8,11,20,0.85) 40%, rgba(8,11,20,0) 100%)",
+              opacity: atEnd ? 0 : 1,
+            }}
           />
           <div
             ref={scrollerRef}

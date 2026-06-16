@@ -72,7 +72,7 @@ const BrandedCTASection = ({
               </p>
             </ScrollReveal>
 
-            <ScrollReveal animation="fadeUp" duration={0.6} delay={0.4}>
+            <ScrollReveal animation="scaleUp" duration={0.6} delay={0.4}>
               <div className="flex items-center justify-center gap-3 sm:gap-4">
                 <a
                   href={primaryHref}

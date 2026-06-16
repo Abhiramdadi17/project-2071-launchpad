@@ -474,11 +474,15 @@ const SpecialistPartner = () => {
               whileHover={{ y: -5 }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = "#131920";
-                e.currentTarget.style.borderColor = "#3A3E4A";
+                e.currentTarget.style.borderTopColor = "#3A3E4A";
+                e.currentTarget.style.borderLeftColor = "#3A3E4A";
+                e.currentTarget.style.borderRightColor = "#3A3E4A";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = "#10151B";
-                e.currentTarget.style.borderColor = "#26282ECC";
+                e.currentTarget.style.borderTopColor = "#26282ECC";
+                e.currentTarget.style.borderLeftColor = "#26282ECC";
+                e.currentTarget.style.borderRightColor = "#26282ECC";
               }}
               variants={{
                 hidden: { opacity: 0, y: 50, scale: 0.95 },

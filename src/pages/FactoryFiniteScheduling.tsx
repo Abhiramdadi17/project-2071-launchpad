@@ -95,7 +95,7 @@ const WhyItMattersSection = () => {
         <div className="relative hidden md:block h-px">
           <div
             className="absolute h-px top-0"
-            style={{ left: 0, right: "-72px", background: "rgba(255,255,255,0.18)" }}
+            style={{ left: 0, right: 0, background: "rgba(255,255,255,0.18)" }}
           />
           {dotPositions.map((p, i) => {
             const active = isDotActive(i);

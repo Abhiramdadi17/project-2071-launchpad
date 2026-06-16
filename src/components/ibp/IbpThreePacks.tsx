@@ -101,8 +101,21 @@ const IbpThreePacks = () => {
           {packs.map(({ tier, tierColor, icon, title, desc, features, footer }) => (
             <motion.div
               key={title}
-              className="rounded-lg p-5 sm:p-6 flex flex-col overflow-hidden"
+              className="group rounded-lg p-5 sm:p-6 flex flex-col overflow-hidden cursor-default transition-colors duration-300"
               style={{ backgroundColor: "#10151B", border: "1px solid #26282ECC", borderBottom: `3px solid ${tierColor}` }}
+              whileHover={{ y: -5 }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#131920";
+                e.currentTarget.style.borderTopColor = "#3A3E4A";
+                e.currentTarget.style.borderLeftColor = "#3A3E4A";
+                e.currentTarget.style.borderRightColor = "#3A3E4A";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "#10151B";
+                e.currentTarget.style.borderTopColor = "#26282ECC";
+                e.currentTarget.style.borderLeftColor = "#26282ECC";
+                e.currentTarget.style.borderRightColor = "#26282ECC";
+              }}
               variants={{
                 hidden: { opacity: 0, y: 50, scale: 0.95 },
                 visible: { opacity: 1, y: 0, scale: 1 },
@@ -111,13 +124,13 @@ const IbpThreePacks = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <div
-                  className="w-10 h-10 rounded-md flex items-center justify-center"
+                  className="w-10 h-10 rounded-md flex items-center justify-center transition-colors duration-300 group-hover:border-white/30"
                   style={{ border: `1px solid #26282ECC` }}
                 >
-                  <img src={icon} alt={tier} className="w-6 h-6 object-contain" />
+                  <img src={icon} alt={tier} className="w-6 h-6 object-contain transition-transform duration-300 group-hover:brightness-125" />
                 </div>
                 <span
-                  className="text-[12px] font-bold uppercase tracking-wider"
+                  className="text-[12px] font-bold uppercase tracking-wider transition-colors duration-300 group-hover:brightness-125"
                   style={{ color: tierColor, fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   ({tier})

@@ -114,7 +114,7 @@ const NumbersSection = () => {
           {stats.map((s, i) => (
             <Reveal key={s.v} delay={i * 0.05}>
               <div
-                className="group p-6 h-full transition-all duration-500 ease-out"
+                className="group p-6 h-full transition-all duration-500 ease-out hover:-translate-y-1.5"
                 style={{ background: "#111113", borderRadius: 0 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = "0px 4px 10px 5px #1F32394D";
@@ -124,16 +124,16 @@ const NumbersSection = () => {
                 }}
               >
                 <div
-                  className="text-[36px] sm:text-[36px] mb-3 transition-all duration-500 ease-out group-hover:text-[38px] sm:group-hover:text-[40px]"
+                  className="text-[36px] sm:text-[36px] mb-3 transition-all duration-500 ease-out"
                   style={{ color: "#20A374", fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}
                 >
                   {s.v}
                 </div>
-                <div className="text-white text-[15px] sm:text-[13px] font-semibold mb-3 transition-all duration-500 ease-out group-hover:text-[16px] sm:group-hover:text-[14px]">
+                <div className="text-white text-[15px] sm:text-[13px] font-semibold mb-3 transition-all duration-500 ease-out">
                   {s.l}
                 </div>
                 <p
-                  className="text-[16px] sm:text-[12px] leading-relaxed transition-all duration-500 ease-out group-hover:text-white group-hover:text-[14.5px] sm:group-hover:text-[12.5px]"
+                  className="text-[16px] sm:text-[12px] leading-relaxed transition-all duration-500 ease-out group-hover:text-white"
                   style={{ color: "#737594" }}
                 >
                   {s.d}
@@ -450,7 +450,7 @@ const ObservabilitySection = ({
           {cards.map((c, i) => (
             <Reveal key={c.t} delay={i * 0.05}>
               <div
-                className="group relative h-full p-5 sm:p-6 transition-all duration-500 ease-out cursor-pointer overflow-hidden"
+                className="group relative h-full p-5 sm:p-6 transition-all duration-500 ease-out cursor-pointer overflow-hidden hover:-translate-y-1.5"
                 style={{ background: "#13181C", borderRadius: 0 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = "#0B120B";
@@ -474,7 +474,7 @@ const ObservabilitySection = ({
 
                   {/* title */}
                   <h3
-                    className="text-white text-[20px] sm:text-[17px] font-semibold mb-2.5 leading-[1.3] transition-all duration-500 ease-out group-hover:text-[19px] sm:group-hover:text-[18px]"
+                    className="text-white text-[20px] sm:text-[17px] font-semibold mb-2.5 leading-[1.3] transition-all duration-500 ease-out"
                     style={{ fontFamily: GROTESK }}
                   >
                     {c.t}
@@ -482,7 +482,7 @@ const ObservabilitySection = ({
 
                   {/* description */}
                   <p
-                    className="text-[16px] sm:text-[12px] leading-[1.55] mb-5 flex-1 transition-all duration-500 ease-out group-hover:text-white group-hover:text-[14.5px] sm:group-hover:text-[12.75px]"
+                    className="text-[16px] sm:text-[12px] leading-[1.55] mb-5 flex-1 transition-all duration-500 ease-out group-hover:text-white"
                     style={{ color: MUTED_TXT, fontFamily: GROTESK }}
                   >
                     {c.d}
