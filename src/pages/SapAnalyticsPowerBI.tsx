@@ -220,7 +220,7 @@ const PlainLanguageSection = () => {
             muted
             loop
             playsInline
-            className="w-full max-w-[560px] ml-auto h-auto"
+            className="w-full ml-auto h-auto"
           />
 
         </div>
@@ -386,7 +386,13 @@ const BoardroomSection = () => {
 
   return (
     <section className="py-10 sm:py-14" style={{ background: "#000" }}>
-      <div className="mx-auto max-w-[1240px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
+      <style>{`
+        @media (min-width: 1280px) {
+          .boardroom-panel[aria-expanded="false"] { flex: 0 0 72px !important; max-width: 72px !important; }
+          .boardroom-panel[aria-expanded="true"]  { max-width: 100% !important; }
+        }
+      `}</style>
+      <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
         <ScrollReveal animation="fadeUp">
           <div className="text-center mb-8 sm:mb-10">
             <div className="flex justify-center">
@@ -453,14 +459,14 @@ const BoardroomSection = () => {
         </div>
 
         {/* Desktop / tablet: Accordion strip */}
-        <div className="hidden sm:flex gap-2 sm:gap-2.5 h-[460px] md:h-[520px]">
+        <div className="hidden sm:flex gap-2 sm:gap-2.5 h-[460px] md:h-[520px] xl:h-[640px] xl:w-full">
           {panels.map((p, i) => {
             const isOpen = i === openIndex;
             return (
               <button
                 key={p.label}
                 onClick={() => setOpenIndex(i)}
-                className="relative overflow-hidden rounded-md transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] focus:outline-none text-left cursor-pointer"
+                className="boardroom-panel relative overflow-hidden rounded-md transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] focus:outline-none text-left cursor-pointer"
                 style={{
                   flex: isOpen ? "1 1 0%" : "0 0 56px",
                   maxWidth: isOpen ? "820px" : "56px",
@@ -498,17 +504,17 @@ const BoardroomSection = () => {
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.15 }}
-                    className="relative z-10 h-full w-full flex flex-col justify-end p-5 sm:p-7 md:p-8"
+                    className="relative z-10 h-full w-full flex flex-col justify-end p-5 sm:p-7 md:p-8 xl:p-10"
                   >
-                    <div className="flex items-center gap-2 mb-3 text-[11px] sm:text-[12px] font-medium tracking-wider uppercase" style={{ color: YELLOW }}>
+                    <div className="flex items-center gap-2 mb-3 text-[11px] sm:text-[12px] xl:text-[13px] font-medium tracking-wider uppercase" style={{ color: YELLOW }}>
                       <span>{p.role}</span>
                       <span className="opacity-60">·</span>
                       <span>{p.kicker}</span>
                     </div>
-                    <h3 className="text-white text-[22px] sm:text-[26px] md:text-[30px] font-medium leading-tight mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h3 className="text-white text-[22px] sm:text-[26px] md:text-[30px] xl:text-[38px] font-medium leading-tight mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                       {p.title}
                     </h3>
-                    <p className="text-[13px] sm:text-[14px] max-w-xl mb-5" style={{ color: "rgba(220,228,240,0.78)" }}>
+                    <p className="text-[13px] sm:text-[14px] xl:text-[16px] max-w-xl mb-5" style={{ color: "rgba(220,228,240,0.78)" }}>
                       {p.desc}
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -678,39 +684,39 @@ const ImpactSection = () => {
                 style={{ background: c.glowHover }}
               />
               <div className="relative z-10 flex flex-col h-full min-h-[312px]">
-              {/* top row */}
-              <div className="flex items-start justify-between mb-7">
-                <div className="inline-flex items-center gap-1.5 text-[14px] sm:text-[12px] text-white/90">
-                  <Sparkles className="w-3.5 h-3.5 text-white/80" strokeWidth={1.5} />
-                  <span>Insight</span>
+                {/* top row */}
+                <div className="flex items-start justify-between mb-7">
+                  <div className="inline-flex items-center gap-1.5 text-[14px] sm:text-[12px] text-white/90">
+                    <Sparkles className="w-3.5 h-3.5 text-white/80" strokeWidth={1.5} />
+                    <span>Insight</span>
+                  </div>
+                  <span
+                    className="text-[13px] sm:text-[11px] px-3 py-1 rounded-full text-white/85"
+                    style={{ border: "1px solid rgba(255,255,255,0.18)", background: "rgba(255,255,255,0.04)" }}
+                  >
+                    {c.tag}
+                  </span>
                 </div>
-                <span
-                  className="text-[13px] sm:text-[11px] px-3 py-1 rounded-full text-white/85"
-                  style={{ border: "1px solid rgba(255,255,255,0.18)", background: "rgba(255,255,255,0.04)" }}
-                >
-                  {c.tag}
-                </span>
-              </div>
 
-              {/* big number */}
-              <div className="flex items-start gap-1 mb-6 relative">
-                <span className="text-[68px] sm:text-[76px] font-medium leading-[0.9] text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                  {c.value}
-                </span>
-                <span className="text-[22px] font-medium text-white mt-2">{c.unit}</span>
-                <ArrowUpRight className="w-5 h-5 ml-2 mt-2" style={{ color: c.arrow }} strokeWidth={1.75} />
-              </div>
+                {/* big number */}
+                <div className="flex items-start gap-1 mb-6 relative">
+                  <span className="text-[68px] sm:text-[76px] font-medium leading-[0.9] text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    {c.value}
+                  </span>
+                  <span className="text-[22px] font-medium text-white mt-2">{c.unit}</span>
+                  <ArrowUpRight className="w-5 h-5 ml-2 mt-2" style={{ color: c.arrow }} strokeWidth={1.75} />
+                </div>
 
-              {/* description */}
-              <p className="text-[12.5px] leading-[1.6] mb-auto" style={{ color: "rgba(255,255,255,0.78)" }}>
-                {c.desc}
-              </p>
+                {/* description */}
+                <p className="text-[12.5px] leading-[1.6] mb-auto" style={{ color: "rgba(255,255,255,0.78)" }}>
+                  {c.desc}
+                </p>
 
-              {/* footer */}
-              <div className="mt-7 text-right">
-                <div className="text-[15px] sm:text-[14px] font-medium text-white">{c.role}</div>
-                <div className="text-[11.5px] mt-0.5" style={{ color: "rgba(255,255,255,0.55)" }}>{c.company}</div>
-              </div>
+                {/* footer */}
+                <div className="mt-7 text-right">
+                  <div className="text-[15px] sm:text-[14px] font-medium text-white">{c.role}</div>
+                  <div className="text-[11.5px] mt-0.5" style={{ color: "rgba(255,255,255,0.55)" }}>{c.company}</div>
+                </div>
               </div>
             </motion.div>
           ))}

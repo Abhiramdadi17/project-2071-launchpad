@@ -282,7 +282,7 @@ const AgenticIntelligence = () => {
           </motion.p>
 
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8"
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 xl:max-w-[760px]"
             initial="hidden"
             animate="visible"
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15, delayChildren: 1.1 } } }}
@@ -606,60 +606,68 @@ const AgenticIntelligence = () => {
       </section>
 
       {/* SECTION 7 — Built to sit alongside */}
-      <section className="relative py-12 sm:py-16" style={{ backgroundColor: "#0A1020" }}>
+      <section className="relative py-8 sm:py-12" style={{ backgroundColor: "#0A1020" }}>
         <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
-          <ScrollReveal animation="fadeUp" duration={0.4}>
-            <p className="text-primary text-[11px] tracking-[0.2em] mb-5 flex items-center gap-2" style={{ textTransform: "none" }}>
-              <span className="w-6 h-px bg-primary" />
-              Technical Foundation
-            </p>
-          </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-12 mb-20">
-            <ScrollReveal animation="fadeUp" duration={0.4} delay={0.08}>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-medium leading-tight text-white">
-                Built to sit alongside
-                <br />
-                your SAP — not inside it.
-              </h2>
-            </ScrollReveal>
-            <ScrollReveal animation="fadeUp" duration={0.4} delay={0.16}>
-              <p className="text-muted-foreground text-[15px] sm:text-base leading-relaxed">
-                We read from SAP using standard APIs. All agent reasoning, actions, and approvals
-                happen in the Carbynetech platform — a web application separate from SAP. Your SAP
-                core is never modified. No Joule. No embedded AI. No risk to your landscape.
-              </p>
-            </ScrollReveal>
-          </div>
+          <div className="xl:grid xl:grid-cols-[1.4fr_0.6fr] xl:gap-4 2xl:gap-16 2xl:grid-cols-[1.2fr_0.8fr] xl:items-center">
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {foundationItems.map((f, i) => (
-              <motion.div
-                key={f.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="text-center flex flex-col items-center"
-              >
-                <div
-                  className="w-12 h-12 rounded-lg mx-auto mb-4 flex items-center justify-center"
-                  style={{ backgroundColor: "#1A2E28" }}
-                >
-                  <img
-                    src={f.icon}
-                    alt={f.title.replace("\n", " ")}
-                    className="w-6 h-6 object-contain"
-                    style={{ filter: "brightness(0) invert(1)" }}
-                  />
-                </div>
-                <p
-                  className="text-xs sm:text-sm font-semibold whitespace-pre-line leading-snug"
-                  style={{ color: "#21C45D" }}
-                >
-                  {f.title}
+            {/* Left: eyebrow + title + paragraph */}
+            <div>
+              <ScrollReveal animation="fadeUp" duration={0.4}>
+                <p className="text-primary text-[11px] tracking-[0.2em] mb-4 flex items-center gap-2" style={{ textTransform: "none" }}>
+                  <span className="w-6 h-px bg-primary" />
+                  Technical Foundation
                 </p>
-              </motion.div>
-            ))}
+              </ScrollReveal>
+              <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] xl:grid-cols-1 gap-8 mb-12 xl:mb-0">
+                <ScrollReveal animation="fadeUp" duration={0.4} delay={0.08}>
+                  <h2 className="text-2xl sm:text-4xl md:text-5xl font-medium leading-tight text-white xl:mb-5">
+                    Built to sit alongside
+                    <br />
+                    your SAP — not inside it.
+                  </h2>
+                </ScrollReveal>
+                <ScrollReveal animation="fadeUp" duration={0.4} delay={0.16}>
+                  <p className="text-muted-foreground text-[15px] sm:text-base leading-relaxed">
+                    We read from SAP using standard APIs. All agent reasoning, actions, and approvals
+                    happen in the Carbynetech platform — a web application separate from SAP. Your SAP
+                    core is never modified. No Joule. No embedded AI. No risk to your landscape.
+                  </p>
+                </ScrollReveal>
+              </div>
+            </div>
+
+            {/* Right: foundation icons — 4-col below xl, 2×2 at xl+ */}
+            <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-2 gap-5">
+              {foundationItems.map((f, i) => (
+                <motion.div
+                  key={f.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  className="text-center flex flex-col items-center"
+                >
+                  <div
+                    className="w-12 h-12 rounded-lg mx-auto mb-4 flex items-center justify-center"
+                    style={{ backgroundColor: "#1A2E28" }}
+                  >
+                    <img
+                      src={f.icon}
+                      alt={f.title.replace("\n", " ")}
+                      className="w-6 h-6 object-contain"
+                      style={{ filter: "brightness(0) invert(1)" }}
+                    />
+                  </div>
+                  <p
+                    className="text-xs sm:text-sm font-semibold whitespace-pre-line leading-snug"
+                    style={{ color: "#21C45D" }}
+                  >
+                    {f.title}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
           </div>
         </div>
       </section>

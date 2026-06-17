@@ -422,9 +422,9 @@ const AgentsSection = () => {
     { icon: GitBranch, t: "Closed Loop SIF", d: "Pushes corrective commands directly to machines.", badge: "Connected" },
   ];
   return (
-    <section className="py-12 sm:py-16" style={{ background: "#000000" }}>
+    <section className="py-12 sm:py-14 xl:py-4" style={{ background: "#000000" }}>
       <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-8 items-start lg:items-center">
           <Reveal>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-6 h-px" style={{ background: "rgba(255,255,255,0.45)" }} />
@@ -512,7 +512,7 @@ const ApproachSection = () => {
     { icon: RefreshCw, num: "05", t: "Evolve",     d: "Continuous model improvement.",             color: "#19D3D6" },
   ];
   return (
-    <section className="py-12 sm:py-16" style={{ background: "#000000" }}>
+    <section className="py-12 sm:py-14 xl:py-6" style={{ background: "#000000" }}>
       <div className="mx-auto max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20">
         <Reveal>
           <Eyebrow text="Our Approach" />

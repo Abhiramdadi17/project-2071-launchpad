@@ -1046,7 +1046,7 @@ const ShopFloorCTASection = () => (
         margin you can recover — using your own production data. No cost. No commitment.
       </motion.p>
       <motion.div
-        className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pb-12 sm:pb-14 md:pb-16"
+        className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pb-24 sm:pb-28"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -1234,8 +1234,8 @@ const ShopFloor = () => (
       <Reveal variant="tilt"><OutcomesSection /></Reveal>
       <Reveal variant="zoom"><ImpactStripSection /></Reveal>
       <Reveal variant="blur"><TestimonialsSection /></Reveal>
-      <Reveal variant="rise"><ShopFloorCTASection /></Reveal>
-      <div className="pt-12 sm:pt-14" style={{ background: "#0a0a0a" }}>
+      <ShopFloorCTASection />
+      <div className="pt-24 sm:pt-28" style={{ background: "#0a0a0a" }}>
         <FooterSection />
       </div>
     </div>
