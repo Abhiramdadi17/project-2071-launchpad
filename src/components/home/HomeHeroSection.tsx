@@ -15,7 +15,7 @@ const capabilities = [
   { icon: Bot, label: "Agentic AI" },
   { icon: BarChart3, label: "Microsoft Fabric Analytics" },
   { icon: Cpu, label: "IOT Manufacturing Excellence" },
-  { icon: Shield, label: "Splunk IT Infra & Security" },
+  { icon: Shield, label: "Splunk" },
 ];
 
 const HomeHeroSection = () => {
