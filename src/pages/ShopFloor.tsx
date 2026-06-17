@@ -1039,7 +1039,7 @@ const ShopFloorCTASection = () => (
         style={{ color: "rgba(0,0,0,0.75)" }}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.6 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.7, delay: 0.15, ease }}
       >
         In two weeks, we baseline your true yield, your real reconciliation gap, and the
@@ -1049,7 +1049,7 @@ const ShopFloorCTASection = () => (
         className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pb-24 sm:pb-28"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.1 }}
         variants={{
           hidden: {},
           visible: { transition: { staggerChildren: 0.12, delayChildren: 0.25 } },

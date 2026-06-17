@@ -992,7 +992,7 @@ const SeeInventiqCTASection = () => {
           style={{ color: "rgba(0,0,0,0.65)" }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.7, delay: 0.15, ease }}
         >
           In two weeks, we quantify exactly how much working capital you can free — using your own inventory data.
@@ -1004,7 +1004,7 @@ const SeeInventiqCTASection = () => {
           className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pb-12 sm:pb-14 md:pb-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={{
             hidden: {},
             visible: { transition: { staggerChildren: 0.12, delayChildren: 0.25 } },
