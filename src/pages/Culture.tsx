@@ -48,7 +48,7 @@ const Photo = ({
   src?: string;
 }) => (
   <div
-    className={`bg-gradient-to-br from-stone-200 to-stone-300 border border-black/5 shadow-sm rounded-xl overflow-hidden transition-all duration-300 ease-out hover:shadow-lg hover:z-10 relative cursor-pointer ${className}`}
+    className={`bg-gradient-to-br from-stone-200 to-stone-300 border border-black/5 shadow-sm rounded-xl overflow-hidden transition-all duration-300 ease-out hover:shadow-lg hover:z-10 relative cursor-default ${className}`}
     style={{
       ...(aspect ? { aspectRatio: aspect } : {}),
       transform: `rotate(${rotate}deg)`,
@@ -170,7 +170,7 @@ const Culture = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
             {[
               { eb: "01 / Ownership", t: "Ownership", d: "We take responsibility from start to finish — proactive, accountable, and dependable.", bg: "#FFFFFF", fg: "#1a1a1a", ebColor: "#6b6b6b" },
-              { eb: "02 / Clarity", t: <>Clarity Over <em style={{ color: "#1a1a1a" }}>Complexity</em></>, d: "We prefer simple, elegant solutions over over-engineered systems that no one can maintain.", bg: "#C8FF01", fg: "#1a1a1a", ebColor: "#1a1a1a" },
+              { eb: "02 / Clarity", t: <>Clarity Over <em style={{ color: "#1a1a1a" }}>Complexity</em></>, d: "We prefer simple, elegant solutions over over-engineered systems that no one can maintain.", bg: "#E0A82E", fg: "#1a1a1a", ebColor: "#1a1a1a" },
               { eb: "03 / Learning", t: "Continuous Learning", d: "We stay curious and committed to growth — sharpening our craft, every single day.", bg: "#FFFFFF", fg: "#1a1a1a", ebColor: "#6b6b6b" },
             ].map((v, i) => (
               <div
@@ -568,7 +568,7 @@ const Culture = () => {
               },
               {
                 t: "Fast-moving,", em: "Thoughtful.",
-                bg: "#C8FF01", fg: "#0a0a0a", emColor: "#1F4F4A", yetColor: "#1a1a1a",
+                bg: "#ffe201", fg: "#0a0a0a", emColor: "#1F4F4A", yetColor: "#1a1a1a",
                 icon: (
                   <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M10 35 L70 35 L60 25 M70 35 L60 45" />

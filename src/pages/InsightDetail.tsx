@@ -72,7 +72,7 @@ const InsightDetail = ({ slug = "cfo-intelligence-suite" }: Props) => {
             </p>
           </ScrollReveal>
           <ScrollReveal animation="clipReveal" duration={1} delay={0.1}>
-            <h1 className="text-white text-[30px] sm:text-[52px] md:text-[43px] font-medium leading-[1.15] sm:leading-[1.08] mb-6 max-w-[860px]">
+            <h1 className="text-white text-[18px] sm:text-[22px] md:text-[28px] lg:text-[38px] xl:text-[46px] 2xl:text-[56px] font-medium leading-[1.15] sm:leading-[1.08] mb-6">
               {data.heroTitle}
             </h1>
           </ScrollReveal>

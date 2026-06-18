@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useLocation, useRouter } from "@tanstack/react-router";
 import logo from "@/assets/logo.png";
 import logoCulture from "@/assets/carbynetech-logo-full.png";
@@ -142,6 +142,25 @@ const Navbar = () => {
   const navigate = useNavigate();
   const router = useRouter();
   const location = useLocation();
+
+  const hoverCloseTimer = useRef<ReturnType<typeof globalThis.setTimeout> | null>(null);
+
+  const cancelClose = () => {
+    if (hoverCloseTimer.current !== null) {
+      globalThis.clearTimeout(hoverCloseTimer.current);
+      hoverCloseTimer.current = null;
+    }
+  };
+
+  const scheduleClose = () => {
+    cancelClose();
+    hoverCloseTimer.current = globalThis.setTimeout(() => setOpenMenu(null), 150);
+  };
+
+  const openMenuOnHover = (title: string) => {
+    cancelClose();
+    setOpenMenu(title);
+  };
 
   const preloadHref = (href: string) => {
     if (!href.startsWith("/")) return;
@@ -349,7 +368,13 @@ const Navbar = () => {
     <div className="hidden lg:flex items-center gap-6 xl:gap-8 ml-auto mr-6">
       {navigationLinks.map((link) => {
         const isMenuActive = openMenu === link.title;
-        const isRouteActive = link.href ? location.pathname === link.href : false;
+        const isRouteActive = link.href
+          ? location.pathname === link.href
+          : link.title === "Services"
+            ? (serviceRouteHrefs as readonly string[]).includes(location.pathname)
+            : link.title === "Products"
+              ? (productRouteHrefs as readonly string[]).includes(location.pathname)
+              : false;
         // When a dropdown menu is open, only the open trigger is active (suppress route highlight)
         const isActive = isOverlayOpen ? isMenuActive : (isMenuActive || isRouteActive);
         const darkText = isCulture && !isOverlayOpen;
@@ -361,6 +386,12 @@ const Navbar = () => {
             }}
             onFocus={() => {
               if (link.href) preloadHref(link.href);
+            }}
+            onMouseEnter={() => {
+              if (link.hasDropdown) openMenuOnHover(link.title);
+            }}
+            onMouseLeave={() => {
+              if (link.hasDropdown) scheduleClose();
             }}
             onClick={() => {
               if (link.hasDropdown) {
@@ -464,6 +495,8 @@ const Navbar = () => {
 
       {/* Full-screen overlay (sits below the fixed nav) */}
       <div
+        onMouseEnter={cancelClose}
+        onMouseLeave={scheduleClose}
         className={`fixed inset-0 z-[100] transition-all duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] ${
           isOverlayOpen ? "visible opacity-100" : "invisible opacity-0"
         }`}
