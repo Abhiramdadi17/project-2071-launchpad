@@ -1,3 +1,5 @@
+import ExplorePanel from "@/components/ExplorePanel";
+
 const CTASection = () => {
   return (
     <section id="contact" className="relative py-12 sm:py-16 overflow-hidden" style={{ background: '#C8FF01' }}>
@@ -26,13 +28,13 @@ const CTASection = () => {
           >
             CONTACT US
           </a>
-          <a
-            href="#"
-            className="w-full sm:w-auto px-6 py-3 text-sm font-medium rounded-none transition-colors text-center"
+          <ExplorePanel
+            type="more"
+            className="w-full sm:w-auto px-6 py-3 text-sm font-medium rounded-none transition-colors text-center inline-flex items-center justify-center"
             style={{ border: '1px solid rgba(8,11,20,0.3)', color: '#080B14' }}
           >
             EXPLORE MORE
-          </a>
+          </ExplorePanel>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ExplorePanel from "@/components/ExplorePanel";
 
 const EwmCTASection = () => {
   return (
@@ -55,13 +56,13 @@ const EwmCTASection = () => {
           >
             CONTACT US
           </a>
-          <a
-            href="#"
-            className="w-full sm:w-auto px-6 py-3 text-sm font-medium rounded-none transition-colors hover:bg-white/5 text-center text-white"
+          <ExplorePanel
+            type="more"
+            className="w-full sm:w-auto px-6 py-3 text-sm font-medium rounded-none transition-colors hover:bg-white/5 text-center text-white inline-flex items-center justify-center"
             style={{ border: "1px solid rgba(255,255,255,0.2)" }}
           >
             EXPLORE MORE
-          </a>
+          </ExplorePanel>
         </motion.div>
       </div>
     </section>

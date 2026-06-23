@@ -1,4 +1,5 @@
 import ScrollReveal from "@/components/ewm/ScrollReveal";
+import ExplorePanel from "@/components/ExplorePanel";
 import ctaBg from "@/assets/cta-bg.png";
 
 const HomeCTASection = () => {
@@ -65,12 +66,13 @@ const HomeCTASection = () => {
                   </svg>
                 </a>
 
-                <button
-                  className="rounded-full px-5 py-2.5 text-[12px] font-medium text-white transition-transform hover:scale-105 sm:px-7 sm:py-3 sm:text-[13px]"
+                <ExplorePanel
+                  type="more"
+                  className="rounded-full px-5 py-2.5 text-[12px] font-medium text-white transition-transform hover:scale-105 sm:px-7 sm:py-3 sm:text-[13px] inline-flex items-center"
                   style={{ background: "transparent" }}
                 >
                   Explore More
-                </button>
+                </ExplorePanel>
               </div>
             </ScrollReveal>
           </div>

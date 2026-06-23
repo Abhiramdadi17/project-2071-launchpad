@@ -35,6 +35,7 @@ import { Route as CultureRouteImport } from './routes/culture'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConditionMonitoringRouteImport } from './routes/condition-monitoring'
 import { Route as CareersRouteImport } from './routes/careers'
+import { Route as BookConsultantRouteImport } from './routes/book-consultant'
 import { Route as AgenticIntelligenceRouteImport } from './routes/agentic-intelligence'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -202,6 +203,13 @@ const CareersRoute = CareersRouteImport.update({
   path: '/careers',
   getParentRoute: () => rootRouteImport,
 } as any).lazy(() => import('./routes/careers.lazy').then((d) => d.Route))
+const BookConsultantRoute = BookConsultantRouteImport.update({
+  id: '/book-consultant',
+  path: '/book-consultant',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() =>
+  import('./routes/book-consultant.lazy').then((d) => d.Route),
+)
 const AgenticIntelligenceRoute = AgenticIntelligenceRouteImport.update({
   id: '/agentic-intelligence',
   path: '/agentic-intelligence',
@@ -218,6 +226,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/agentic-intelligence': typeof AgenticIntelligenceRoute
+  '/book-consultant': typeof BookConsultantRoute
   '/careers': typeof CareersRoute
   '/condition-monitoring': typeof ConditionMonitoringRoute
   '/contact': typeof ContactRoute
@@ -248,6 +257,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agentic-intelligence': typeof AgenticIntelligenceRoute
+  '/book-consultant': typeof BookConsultantRoute
   '/careers': typeof CareersRoute
   '/condition-monitoring': typeof ConditionMonitoringRoute
   '/contact': typeof ContactRoute
@@ -279,6 +289,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/agentic-intelligence': typeof AgenticIntelligenceRoute
+  '/book-consultant': typeof BookConsultantRoute
   '/careers': typeof CareersRoute
   '/condition-monitoring': typeof ConditionMonitoringRoute
   '/contact': typeof ContactRoute
@@ -311,6 +322,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/agentic-intelligence'
+    | '/book-consultant'
     | '/careers'
     | '/condition-monitoring'
     | '/contact'
@@ -341,6 +353,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/agentic-intelligence'
+    | '/book-consultant'
     | '/careers'
     | '/condition-monitoring'
     | '/contact'
@@ -371,6 +384,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/agentic-intelligence'
+    | '/book-consultant'
     | '/careers'
     | '/condition-monitoring'
     | '/contact'
@@ -402,6 +416,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AgenticIntelligenceRoute: typeof AgenticIntelligenceRoute
+  BookConsultantRoute: typeof BookConsultantRoute
   CareersRoute: typeof CareersRoute
   ConditionMonitoringRoute: typeof ConditionMonitoringRoute
   ContactRoute: typeof ContactRoute
@@ -614,6 +629,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CareersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/book-consultant': {
+      id: '/book-consultant'
+      path: '/book-consultant'
+      fullPath: '/book-consultant'
+      preLoaderRoute: typeof BookConsultantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/agentic-intelligence': {
       id: '/agentic-intelligence'
       path: '/agentic-intelligence'
@@ -634,6 +656,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AgenticIntelligenceRoute: AgenticIntelligenceRoute,
+  BookConsultantRoute: BookConsultantRoute,
   CareersRoute: CareersRoute,
   ConditionMonitoringRoute: ConditionMonitoringRoute,
   ContactRoute: ContactRoute,

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/home/FooterSection";
+import ExplorePanel from "@/components/ExplorePanel";
 import ScrollReveal from "@/components/ewm/ScrollReveal";
 import heroBg from "@/assets/sfx9/hero-bg.png";
 import oeeMonitor from "@/assets/sfx9/oee-monitor.png";
@@ -594,13 +595,13 @@ export default function Sfx9Mes() {
             >
               Contact Us
             </a>
-            <a
-              href="#"
-              className="px-9 py-3.5 text-[12px] font-semibold uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white"
+            <ExplorePanel
+              type="more"
+              className="px-9 py-3.5 text-[12px] font-semibold uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white inline-flex items-center justify-center"
               style={{ border: "1px solid rgba(0,0,0,0.35)" }}
             >
               Explore More
-            </a>
+            </ExplorePanel>
           </div>
         </div>
 
@@ -620,15 +621,18 @@ export default function Sfx9Mes() {
             </div>
             <div className="flex items-center gap-6 shrink-0">
               <a
-                href="/contact"
+                href="/book-consultant?product=sfx9-mes"
                 className="px-6 py-3 text-[12px] xl:text-[14px] font-medium rounded-full transition-transform hover:scale-105"
                 style={{ background: "#fff", color: "#111" }}
               >
                 Book a Consultant
               </a>
-              <a href="#" className="text-[12px] xl:text-[14px] text-white/85 hover:text-white inline-flex items-center gap-1.5">
-                Explorer Services <span aria-hidden>↗</span>
-              </a>
+              <ExplorePanel
+                type="services"
+                className="text-[12px] xl:text-[14px] text-white/85 hover:text-white inline-flex items-center gap-1.5"
+              >
+                Explore Services
+              </ExplorePanel>
             </div>
           </div>
         </div>

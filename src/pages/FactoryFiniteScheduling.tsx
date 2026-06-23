@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/home/FooterSection";
+import ExplorePanel from "@/components/ExplorePanel";
 import heroBg from "@/assets/factory-scheduling-hero-bg.png";
 import iconJobshop from "@/assets/ffs-icon-jobshop.png";
 import iconBatch from "@/assets/ffs-icon-batch.png";
@@ -624,13 +625,13 @@ const TransformCTASection = () => (
         >
           Contact Us
         </a>
-        <a
-          href="#"
-          className="px-9 py-3.5 text-[11px] xl:text-[13px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white"
+        <ExplorePanel
+          type="more"
+          className="px-9 py-3.5 text-[11px] xl:text-[13px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white inline-flex items-center justify-center"
           style={{ border: "1px solid rgba(0,0,0,0.35)" }}
         >
           Explore More
-        </a>
+        </ExplorePanel>
       </div>
     </div>
 
@@ -650,15 +651,18 @@ const TransformCTASection = () => (
         </div>
         <div className="flex items-center gap-6 shrink-0">
           <a
-            href="#"
+            href="/book-consultant?product=factory-finite-scheduling"
             className="px-6 py-3 text-[12px] xl:text-[14px] font-medium rounded-full transition-transform hover:scale-105"
             style={{ background: "#fff", color: "#111" }}
           >
             Book a Consultant
           </a>
-          <a href="#" className="text-[12px] xl:text-[14px] text-white/85 hover:text-white inline-flex items-center gap-1.5">
-            Explorer Services <span aria-hidden>↗</span>
-          </a>
+          <ExplorePanel
+            type="services"
+            className="text-[12px] xl:text-[14px] text-white/85 hover:text-white inline-flex items-center gap-1.5"
+          >
+            Explore Services
+          </ExplorePanel>
         </div>
       </div>
     </div>

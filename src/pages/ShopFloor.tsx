@@ -1,7 +1,6 @@
 import { motion, useScroll, useSpring, useTransform, useReducedMotion } from "framer-motion";
 import { useState, useRef } from "react";
 import {
-  ArrowUpRight,
   Activity,
   Boxes,
   FileCheck2,
@@ -15,6 +14,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/home/FooterSection";
+import ExplorePanel from "@/components/ExplorePanel";
 import heroBg from "@/assets/shopfloor-hero-bg.jpg";
 import dashboardImg from "@/assets/shopfloor-dashboard.png";
 
@@ -1055,11 +1055,8 @@ const ShopFloorCTASection = () => (
           visible: { transition: { staggerChildren: 0.12, delayChildren: 0.25 } },
         }}
       >
-        {["Contact Us", "Explore More"].map((label) => (
           <motion.a
-            key={label}
-            href={label === "Contact Us" ? "/contact" : "#"}
-
+            href="/contact"
             className="w-full sm:w-auto px-8 sm:px-9 py-3.5 text-[11px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white text-center"
             style={{ border: "1px solid rgba(0,0,0,0.35)" }}
             variants={{
@@ -1067,9 +1064,23 @@ const ShopFloorCTASection = () => (
               visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
             }}
           >
-            {label}
+            Contact Us
           </motion.a>
-        ))}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
+            }}
+            className="w-full sm:w-auto"
+          >
+            <ExplorePanel
+              type="more"
+              className="w-full sm:w-auto px-8 sm:px-9 py-3.5 text-[11px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white text-center inline-flex items-center justify-center"
+              style={{ border: "1px solid rgba(0,0,0,0.35)" }}
+            >
+              Explore More
+            </ExplorePanel>
+          </motion.div>
       </motion.div>
     </div>
 
@@ -1098,18 +1109,18 @@ const ShopFloorCTASection = () => (
         </div>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 shrink-0 w-full md:w-auto">
           <a
-            href="#"
+            href="/book-consultant?product=shopfloor"
             className="px-6 py-3 text-[13px] font-semibold rounded-full transition-transform hover:scale-105 text-center whitespace-nowrap"
             style={{ background: "#fff", color: "#111" }}
           >
             Book a Walk-through
           </a>
-          <a
-            href="#"
+          <ExplorePanel
+            type="services"
             className="text-[13px] font-medium text-white/90 hover:text-white inline-flex items-center justify-center sm:justify-start gap-1.5 whitespace-nowrap"
           >
-            Explore Services <ArrowUpRight size={13} />
-          </a>
+            Explore Services
+          </ExplorePanel>
         </div>
       </motion.div>
     </div>

@@ -1,10 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import {
-  ArrowUpRight, BarChart3, Beaker, Boxes,
+  BarChart3, Beaker, Boxes,
   Database, FileCheck2, Sparkles, Truck,
   Hourglass, Globe, Link2, ShieldCheck, BrainCircuit,
 } from "lucide-react";
+import ExplorePanel from "@/components/ExplorePanel";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/home/FooterSection";
 import heroBg from "@/assets/inventiq-hero-bg.jpeg";
@@ -1010,21 +1011,32 @@ const SeeInventiqCTASection = () => {
             visible: { transition: { staggerChildren: 0.12, delayChildren: 0.25 } },
           }}
         >
-          {["Contact Us", "Explore More"].map((label) => (
-            <motion.a
-              key={label}
-              href={label === "Contact Us" ? "/contact" : "#"}
-
-              className="w-full sm:w-auto px-8 sm:px-9 py-3.5 text-[14px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white text-center"
+          <motion.a
+            href="/contact"
+            className="w-full sm:w-auto px-8 sm:px-9 py-3.5 text-[14px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white text-center"
+            style={{ border: "1px solid rgba(0,0,0,0.35)" }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
+            }}
+          >
+            Contact Us
+          </motion.a>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
+            }}
+            className="w-full sm:w-auto"
+          >
+            <ExplorePanel
+              type="more"
+              className="w-full sm:w-auto px-8 sm:px-9 py-3.5 text-[14px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white text-center inline-flex items-center justify-center"
               style={{ border: "1px solid rgba(0,0,0,0.35)" }}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
-              }}
             >
-              {label}
-            </motion.a>
-          ))}
+              Explore More
+            </ExplorePanel>
+          </motion.div>
         </motion.div>
       </div>
 
@@ -1054,18 +1066,18 @@ const SeeInventiqCTASection = () => {
           </div>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 shrink-0 w-full md:w-auto">
             <a
-              href="#"
+              href="/book-consultant?product=inventiq"
               className="px-6 py-3 text-[14px] font-medium rounded-full transition-transform hover:scale-105 text-center whitespace-nowrap"
               style={{ background: "#fff", color: "#111" }}
             >
               Book a Consultant
             </a>
-            <a
-              href="#"
+            <ExplorePanel
+              type="services"
               className="text-[14px] text-white/85 hover:text-white inline-flex items-center justify-center sm:justify-start gap-1.5 whitespace-nowrap"
             >
-              Explore Services <ArrowUpRight size={12} />
-            </a>
+              Explore Services
+            </ExplorePanel>
           </div>
         </motion.div>
       </div>

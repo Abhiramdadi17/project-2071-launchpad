@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ExplorePanel from "@/components/ExplorePanel";
 
 const IbpCTASection = () => {
   return (
@@ -76,13 +77,13 @@ const IbpCTASection = () => {
           >
             CONTACT US
           </a>
-          <a
-            href="#"
-            className="w-full sm:w-auto px-6 py-3 text-sm font-medium rounded-none transition-colors text-center text-[#080B14] hover:bg-[#080B14] hover:!text-white"
+          <ExplorePanel
+            type="more"
+            className="w-full sm:w-auto px-6 py-3 text-sm font-medium rounded-none transition-colors text-center text-[#080B14] hover:bg-[#080B14] hover:!text-white inline-flex items-center justify-center"
             style={{ border: '1px solid rgba(8,11,20,0.3)' }}
           >
             EXPLORE MORE
-          </a>
+          </ExplorePanel>
         </motion.div>
       </div>
     </section>
