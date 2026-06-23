@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as VisionAnalyticsRouteImport } from './routes/vision-analytics'
 import { Route as TechFactoryRouteImport } from './routes/tech-factory'
 import { Route as SplunkAiApplicationsRouteImport } from './routes/splunk-ai-applications'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShopfloorDigitalAppsRouteImport } from './routes/shopfloor-digital-apps'
 import { Route as ShopfloorRouteImport } from './routes/shopfloor'
 import { Route as Sfx9MesRouteImport } from './routes/sfx9-mes'
@@ -58,6 +59,11 @@ const SplunkAiApplicationsRoute = SplunkAiApplicationsRouteImport.update({
 } as any).lazy(() =>
   import('./routes/splunk-ai-applications.lazy').then((d) => d.Route),
 )
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShopfloorDigitalAppsRoute = ShopfloorDigitalAppsRouteImport.update({
   id: '/shopfloor-digital-apps',
   path: '/shopfloor-digital-apps',
@@ -250,6 +256,7 @@ export interface FileRoutesByFullPath {
   '/sfx9-mes': typeof Sfx9MesRoute
   '/shopfloor': typeof ShopfloorRoute
   '/shopfloor-digital-apps': typeof ShopfloorDigitalAppsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/splunk-ai-applications': typeof SplunkAiApplicationsRoute
   '/tech-factory': typeof TechFactoryRoute
   '/vision-analytics': typeof VisionAnalyticsRoute
@@ -281,6 +288,7 @@ export interface FileRoutesByTo {
   '/sfx9-mes': typeof Sfx9MesRoute
   '/shopfloor': typeof ShopfloorRoute
   '/shopfloor-digital-apps': typeof ShopfloorDigitalAppsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/splunk-ai-applications': typeof SplunkAiApplicationsRoute
   '/tech-factory': typeof TechFactoryRoute
   '/vision-analytics': typeof VisionAnalyticsRoute
@@ -313,6 +321,7 @@ export interface FileRoutesById {
   '/sfx9-mes': typeof Sfx9MesRoute
   '/shopfloor': typeof ShopfloorRoute
   '/shopfloor-digital-apps': typeof ShopfloorDigitalAppsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/splunk-ai-applications': typeof SplunkAiApplicationsRoute
   '/tech-factory': typeof TechFactoryRoute
   '/vision-analytics': typeof VisionAnalyticsRoute
@@ -346,6 +355,7 @@ export interface FileRouteTypes {
     | '/sfx9-mes'
     | '/shopfloor'
     | '/shopfloor-digital-apps'
+    | '/sitemap.xml'
     | '/splunk-ai-applications'
     | '/tech-factory'
     | '/vision-analytics'
@@ -377,6 +387,7 @@ export interface FileRouteTypes {
     | '/sfx9-mes'
     | '/shopfloor'
     | '/shopfloor-digital-apps'
+    | '/sitemap.xml'
     | '/splunk-ai-applications'
     | '/tech-factory'
     | '/vision-analytics'
@@ -408,6 +419,7 @@ export interface FileRouteTypes {
     | '/sfx9-mes'
     | '/shopfloor'
     | '/shopfloor-digital-apps'
+    | '/sitemap.xml'
     | '/splunk-ai-applications'
     | '/tech-factory'
     | '/vision-analytics'
@@ -440,6 +452,7 @@ export interface RootRouteChildren {
   Sfx9MesRoute: typeof Sfx9MesRoute
   ShopfloorRoute: typeof ShopfloorRoute
   ShopfloorDigitalAppsRoute: typeof ShopfloorDigitalAppsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SplunkAiApplicationsRoute: typeof SplunkAiApplicationsRoute
   TechFactoryRoute: typeof TechFactoryRoute
   VisionAnalyticsRoute: typeof VisionAnalyticsRoute
@@ -466,6 +479,13 @@ declare module '@tanstack/react-router' {
       path: '/splunk-ai-applications'
       fullPath: '/splunk-ai-applications'
       preLoaderRoute: typeof SplunkAiApplicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shopfloor-digital-apps': {
@@ -680,6 +700,7 @@ const rootRouteChildren: RootRouteChildren = {
   Sfx9MesRoute: Sfx9MesRoute,
   ShopfloorRoute: ShopfloorRoute,
   ShopfloorDigitalAppsRoute: ShopfloorDigitalAppsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SplunkAiApplicationsRoute: SplunkAiApplicationsRoute,
   TechFactoryRoute: TechFactoryRoute,
   VisionAnalyticsRoute: VisionAnalyticsRoute,
