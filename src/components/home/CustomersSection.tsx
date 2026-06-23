@@ -23,7 +23,7 @@ const CustomersSection = () => {
                 backgroundImage: "linear-gradient(90deg, #EE6269 55.56%, #E25D8C 67.47%, #BA60BD 80.83%, #8766F8 91.29%, #727CFB 100%)",
               }}
             >
-              On the South Asia
+              in South Asia
             </span>
           </h2>
         </ScrollReveal>

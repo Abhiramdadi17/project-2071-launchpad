@@ -77,12 +77,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CarbyneTech — AI Powered Manufacturing & Supply Chain Intelligence" },
-      { name: "description", content: "CarbyneTech delivers AI, SAP, and digital manufacturing solutions that turn data into decisions across the supply chain and shop floor." },
+      { title: "CarbyneTech | AI-Powered Manufacturing & Supply Chain Intelligence" },
+      { name: "description", content: "CarbyneTech delivers AI-powered analytics, industrial IoT, and supply chain intelligence for large manufacturers across South Asia. Real-time insights. Proven ROI." },
       { name: "author", content: "CarbyneTech" },
+      { property: "og:title", content: "CarbyneTech | AI-Powered Manufacturing Intelligence" },
+      { property: "og:description", content: "AI analytics and IoT solutions for manufacturing enterprises. Trusted by leading companies across South Asia." },
       { property: "og:site_name", content: "CarbyneTech" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "CarbyneTech | AI-Powered Manufacturing Intelligence" },
+      { name: "twitter:description", content: "AI analytics and IoT solutions for manufacturing enterprises." },
     ],
     links: [
       {
