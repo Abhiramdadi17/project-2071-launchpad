@@ -146,8 +146,9 @@ const Contact = () => {
                   { name: "phone", label: "Phone", type: "tel" },
                 ].map((f) => (
                   <div key={f.name}>
-                    <label className="block text-[14px] sm:text-[15px] font-semibold text-[#0A1A3A] mb-2">{f.label}</label>
+                    <label htmlFor={`contact-${f.name}`} className="block text-[14px] sm:text-[15px] font-semibold text-[#0A1A3A] mb-2">{f.label}</label>
                     <input
+                      id={`contact-${f.name}`}
                       name={f.name}
                       type={f.type}
                       value={(form as Record<string, string>)[f.name]}
@@ -157,8 +158,9 @@ const Contact = () => {
                   </div>
                 ))}
                 <div>
-                  <label className="block text-[14px] sm:text-[15px] font-semibold text-[#0A1A3A] mb-2">Message</label>
+                  <label htmlFor="contact-message" className="block text-[14px] sm:text-[15px] font-semibold text-[#0A1A3A] mb-2">Message</label>
                   <textarea
+                    id="contact-message"
                     name="message"
                     value={form.message}
                     onChange={handleChange}
