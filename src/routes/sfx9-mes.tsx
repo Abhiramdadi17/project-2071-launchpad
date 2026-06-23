@@ -3,18 +3,15 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/sfx9-mes")({
   head: () => ({
     meta: [
-      { title: "SFX9 MES — The Intelligent Shop Floor Platform | CarbyneTech" },
-      {
-        name: "description",
-        content:
-          "SFX9 is CarbyneTech's Manufacturing Execution System — a realtime intelligence layer for OEE, quality, traceability, maintenance and energy across every plant.",
-      },
-      { property: "og:title", content: "SFX9 MES — The Intelligent Shop Floor Platform" },
-      {
-        property: "og:description",
-        content:
-          "Unify your shop floor into a realtime operating system. Six pillars of SFX9 intelligence — OEE, quality, traceability, maintenance, energy and adaptive manufacturing.",
-      },
+      { title: 'SFx9 MES — CarbyneTech' },
+      { name: "description", content: 'Modern Manufacturing Execution System for connected, paperless shop floors.' },
+      { property: "og:title", content: 'SFx9 MES — CarbyneTech' },
+      { property: "og:description", content: 'Modern Manufacturing Execution System for connected, paperless shop floors.' },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: 'https://carbynetech-2026-3.lovable.app/sfx9-mes' },
+      { name: "twitter:title", content: 'SFx9 MES — CarbyneTech' },
+      { name: "twitter:description", content: 'Modern Manufacturing Execution System for connected, paperless shop floors.' },
     ],
+    links: [{ rel: "canonical", href: 'https://carbynetech-2026-3.lovable.app/sfx9-mes' }],
   }),
 });

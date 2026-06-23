@@ -1,11 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-type InsightsSearch = { case?: string; q?: string; industry?: string };
-
 export const Route = createFileRoute("/insights-events")({
-  validateSearch: (search: Record<string, unknown>): InsightsSearch => ({
-    case: typeof search.case === "string" ? search.case : undefined,
-    q: typeof search.q === "string" ? search.q : undefined,
-    industry: typeof search.industry === "string" ? search.industry : undefined,
+  head: () => ({
+    meta: [
+      { title: 'Insights & Events — CarbyneTech' },
+      { name: "description", content: 'CarbyneTech case studies, articles, and upcoming events on AI and supply chain.' },
+      { property: "og:title", content: 'Insights & Events — CarbyneTech' },
+      { property: "og:description", content: 'CarbyneTech case studies, articles, and upcoming events on AI and supply chain.' },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: 'https://carbynetech-2026-3.lovable.app/insights-events' },
+      { name: "twitter:title", content: 'Insights & Events — CarbyneTech' },
+      { name: "twitter:description", content: 'CarbyneTech case studies, articles, and upcoming events on AI and supply chain.' },
+    ],
+    links: [{ rel: "canonical", href: 'https://carbynetech-2026-3.lovable.app/insights-events' }],
   }),
 });
