@@ -209,12 +209,13 @@ const Careers = () => {
                   ))}
                 </div>
                 <div className="flex justify-end mt-10">
-                  <a
-                    href={`mailto:careers@carbynetech.com?subject=${encodeURIComponent(`Application: ${selectedRole.title}`)}`}
+                  <Link
+                    to="/careers"
+                    search={{ jobtitle: selectedRole.slug, apply: true }}
                     className="bg-[#0A6B2E] text-white text-[13px] sm:text-[14px] font-medium rounded-md px-5 py-2.5 hover:bg-[#085322] transition-colors"
                   >
                     Apply for this job
-                  </a>
+                  </Link>
                 </div>
               </ScrollReveal>
             </div>
@@ -275,10 +276,10 @@ const Careers = () => {
                     </div>
                     <Link
                       to="/careers"
-                      search={{ jobtitle: role.slug, page: undefined }}
+                      search={{ jobtitle: role.slug, apply: true, page: undefined }}
                       className="text-[13px] sm:text-[14px] font-medium text-[#F45B4A] border border-[#F45B4A]/40 rounded-md px-4 py-2 hover:bg-[#F45B4A]/5 transition-colors self-start sm:self-auto whitespace-nowrap"
                     >
-                      View details
+                      Apply for this job
                     </Link>
                   </div>
                 </ScrollReveal>
