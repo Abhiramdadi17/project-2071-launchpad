@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://carbynetech-2026-3.lovable.app/sitemap.xml
