@@ -77,23 +77,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Launchpad Deployer clones a GitHub repository and generates a deployed link for web applications." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Launchpad Deployer clones a GitHub repository and generates a deployed link for web applications." },
+      { title: "CarbyneTech — AI Powered Manufacturing & Supply Chain Intelligence" },
+      { name: "description", content: "CarbyneTech delivers AI, SAP, and digital manufacturing solutions that turn data into decisions across the supply chain and shop floor." },
+      { name: "author", content: "CarbyneTech" },
+      { property: "og:site_name", content: "CarbyneTech" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Launchpad Deployer clones a GitHub repository and generates a deployed link for web applications." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0067367e-264f-44d6-b4df-c7a055d4d749/id-preview-fdcce021--4e5148e5-75fc-4eee-8d0f-6c416c827c68.lovable.app-1782214125196.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0067367e-264f-44d6-b4df-c7a055d4d749/id-preview-fdcce021--4e5148e5-75fc-4eee-8d0f-6c416c827c68.lovable.app-1782214125196.png" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              name: "CarbyneTech",
+              url: "https://carbynetech-2026-3.lovable.app",
+            },
+            {
+              "@type": "WebSite",
+              name: "CarbyneTech",
+              url: "https://carbynetech-2026-3.lovable.app",
+            },
+          ],
+        }),
       },
     ],
   }),
