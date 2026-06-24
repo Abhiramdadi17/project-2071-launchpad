@@ -59,15 +59,15 @@ const Contact = () => {
               </p>
 
               <div className="flex items-center gap-3 mb-10">
-                <a href="#" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:opacity-80 transition-opacity">
+                <a href="https://www.linkedin.com/company/carbynetech-india-private-limited/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:opacity-80 transition-opacity">
                   <Linkedin className="w-4 h-4" fill="currentColor" />
                 </a>
-                <a href="#" aria-label="X" className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:opacity-80 transition-opacity">
+                <a href="https://x.com/carbynetech" target="_blank" rel="noopener noreferrer" aria-label="X" className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:opacity-80 transition-opacity">
                   <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="currentColor">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
                 </a>
-                <a href="#" aria-label="YouTube" className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:opacity-80 transition-opacity">
+                <a href="https://www.youtube.com/channel/UCDUJZ_6tu0bnZuiMmyc3RMw" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:opacity-80 transition-opacity">
                   <Youtube className="w-4 h-4" fill="currentColor" />
                 </a>
               </div>
