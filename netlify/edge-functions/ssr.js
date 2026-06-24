@@ -6,5 +6,22 @@ export default async (request) => {
 
 export const config = {
   path: "/*",
-  excludedPath: ["/assets/*"],
+  excludedPath: [
+    "/assets/*",
+    "/*.png",
+    "/*.jpg",
+    "/*.jpeg",
+    "/*.webp",
+    "/*.svg",
+    "/*.ico",
+    "/*.gif",
+    "/*.woff",
+    "/*.woff2",
+    "/*.ttf",
+    "/*.eot",
+    "/*.txt",
+    "/*.xml",
+    "/*.json",
+    "/*.pdf",
+  ],
 };
