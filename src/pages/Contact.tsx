@@ -55,7 +55,7 @@ const Contact = () => {
                 Contact Details
               </h2>
               <p className="text-[15px] sm:text-[16px] text-gray-600 leading-relaxed max-w-[420px] mb-6">
-                Feel free to reach to us using the contact details below or fill out the form, and we'll get back to you as soon as posible
+                Feel free to reach to us using the contact details below or fill out the form, and we'll get back to you as soon as possible
               </p>
 
               <div className="flex items-center gap-3 mb-10">
@@ -146,8 +146,9 @@ const Contact = () => {
                   { name: "phone", label: "Phone", type: "tel" },
                 ].map((f) => (
                   <div key={f.name}>
-                    <label className="block text-[14px] sm:text-[15px] font-semibold text-[#0A1A3A] mb-2">{f.label}</label>
+                    <label htmlFor={`contact-${f.name}`} className="block text-[14px] sm:text-[15px] font-semibold text-[#0A1A3A] mb-2">{f.label}</label>
                     <input
+                      id={`contact-${f.name}`}
                       name={f.name}
                       type={f.type}
                       value={(form as Record<string, string>)[f.name]}
@@ -157,8 +158,9 @@ const Contact = () => {
                   </div>
                 ))}
                 <div>
-                  <label className="block text-[14px] sm:text-[15px] font-semibold text-[#0A1A3A] mb-2">Message</label>
+                  <label htmlFor="contact-message" className="block text-[14px] sm:text-[15px] font-semibold text-[#0A1A3A] mb-2">Message</label>
                   <textarea
+                    id="contact-message"
                     name="message"
                     value={form.message}
                     onChange={handleChange}
@@ -214,28 +216,6 @@ const Contact = () => {
                 className="w-full block"
               />
             </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Bottom gradient text */}
-      <section className="bg-white border-t border-gray-200">
-        <div className="mx-auto w-full max-w-[1200px] xl:max-w-[1440px] 2xl:max-w-[1720px] [@media(min-width:1920px)]:max-w-[1840px] px-5 sm:px-8 md:px-14 lg:px-20 xl:px-32 2xl:px-20 py-16 sm:py-24">
-          <ScrollReveal animation="fadeUp" duration={0.9}>
-            <h2
-              className="text-[36px] sm:text-[52px] md:text-[64px] leading-[1.1] font-semibold"
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                background: "linear-gradient(90deg, #203FF8 0%, #F45B4A 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              It's Blow Your Mind!
-              <br />
-              Meet Neural Networks
-            </h2>
           </ScrollReveal>
         </div>
       </section>

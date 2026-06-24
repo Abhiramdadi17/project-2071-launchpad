@@ -276,7 +276,7 @@ const Careers = () => {
                     </div>
                     <Link
                       to="/careers"
-                      search={{ jobtitle: role.slug, page: undefined }}
+                      search={{ jobtitle: role.slug, apply: true, page: undefined }}
                       className="text-[13px] sm:text-[14px] font-medium text-[#F45B4A] border border-[#F45B4A]/40 rounded-md px-4 py-2 hover:bg-[#F45B4A]/5 transition-colors self-start sm:self-auto whitespace-nowrap"
                     >
                       Apply for this job

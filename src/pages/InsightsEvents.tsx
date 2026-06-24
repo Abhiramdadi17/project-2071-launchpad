@@ -212,7 +212,7 @@ const InsightsEvents = () => {
                       {c.desc}
                     </p>
                     <span className="inline-flex items-center gap-1 text-[12px] font-medium text-[#7E84FF] group-hover:text-[#A5A8FF] transition-colors">
-                      Read More <ArrowUpRight className="w-3.5 h-3.5" />
+                      Read more about {c.title} <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                     </span>
                   </div>
                 </Link>

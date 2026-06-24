@@ -1,0 +1,43 @@
+# CarbyneTech
+
+> CarbyneTech delivers AI, SAP, and digital manufacturing solutions that turn data into decisions across the supply chain and shop floor.
+
+## Pages
+
+- [Home](/): Overview of CarbyneTech's AI, SAP, and manufacturing intelligence services.
+- [Culture](/culture): Life and values at CarbyneTech.
+- [Careers](/careers): Open roles and how to join the team.
+- [Insights & Events](/insights-events): Case studies, articles, and upcoming events.
+- [Contact](/contact): Reach the CarbyneTech team.
+- [Book a Consultant](/book-consultant): Schedule a discovery call.
+
+## Solutions
+
+- [Agentic Intelligence](/agentic-intelligence): Autonomous AI agents for enterprise workflows.
+- [Decision Intelligence](/decision-intelligence): Data-driven decision systems combining analytics, AI, and human judgment.
+- [Predictive Analytics](/predictive-analytics): Production-grade machine learning for forecasting.
+- [Vision Analytics](/vision-analytics): Computer vision for quality, safety, and process intelligence.
+- [Condition Monitoring](/condition-monitoring): Real-time equipment health monitoring.
+- [Enterprise Data Engineering](/enterprise-data-engineering): Modern data platforms, pipelines, and governance.
+- [Intelligent Web & Mobile Apps](/intelligent-web-mobile-apps): Custom apps enhanced with AI.
+- [Microsoft Power Platform](/microsoft-power-platform): Power Apps, Automate, and BI solutions.
+- [Splunk AI Applications](/splunk-ai-applications): AI-driven observability and operations on Splunk.
+
+## Manufacturing & Shop Floor
+
+- [SFx9 MES](/sfx9-mes): Manufacturing Execution System for connected shop floors.
+- [Factory Finite Scheduling](/factory-finite-scheduling): Constraint-aware production scheduling.
+- [Shop Floor](/shopfloor): Digital shop floor visibility, quality, and OEE.
+- [Shop Floor Digital Apps](/shopfloor-digital-apps): Operator-facing apps connecting people, machines, and SAP.
+- [Tech Factory](/tech-factory): CarbyneTech Tech Factory engineering delivery.
+- [InventIQ](/inventiq): AI-driven inventory intelligence.
+
+## SAP
+
+- [SAP RISE Implementation](/sap-rise-implementation): RISE with SAP and S/4HANA Cloud transformation.
+- [SAP IBP](/sap-ibp): Integrated Business Planning for demand, supply, and S&OP.
+- [SAP EWM](/sap-ewm): Extended Warehouse Management.
+- [SAP Supply Chain & Finance](/sap-supply-chain-finance): Integrated SAP supply chain and finance solutions.
+- [SAP Analytics & Power BI](/sap-analytics-power-bi): SAP analytics, BW/4HANA, and Power BI dashboards.
+- [SAP Application Support](/sap-application-support): End-to-end SAP application management.
+- [SAP Value Creation](/sap-value-creation): Unlocking measurable value from SAP investments.

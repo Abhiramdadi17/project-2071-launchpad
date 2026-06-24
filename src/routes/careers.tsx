@@ -1,11 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-type CareersSearch = { jobtitle?: string; page?: number; apply?: boolean };
-
 export const Route = createFileRoute("/careers")({
-  validateSearch: (search: Record<string, unknown>): CareersSearch => ({
-    jobtitle: typeof search.jobtitle === "string" ? search.jobtitle : undefined,
-    page: typeof search.page === "number" ? search.page : Number(search.page) || undefined,
-    apply: search.apply === true || search.apply === "true" ? true : undefined,
+  head: () => ({
+    meta: [
+      { title: 'Careers — CarbyneTech' },
+      { name: "description", content: 'Join CarbyneTech and build AI-powered manufacturing and supply chain solutions.' },
+      { property: "og:title", content: 'Careers — CarbyneTech' },
+      { property: "og:description", content: 'Join CarbyneTech and build AI-powered manufacturing and supply chain solutions.' },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: 'https://carbynetech-2026-3.lovable.app/careers' },
+      { name: "twitter:title", content: 'Careers — CarbyneTech' },
+      { name: "twitter:description", content: 'Join CarbyneTech and build AI-powered manufacturing and supply chain solutions.' },
+    ],
+    links: [{ rel: "canonical", href: 'https://carbynetech-2026-3.lovable.app/careers' }],
   }),
 });
