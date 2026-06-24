@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --legacy-peer-deps && npm run build && npx esbuild dist/server/server.js --bundle --format=esm --platform=node --outfile=dist/server/bundled.js --define:process.env.NODE_ENV='\"production\"' --external:node:* --external:cloudflare:* --external:util --external:stream --external:buffer --external:events --external:assert --external:path --external:os --external:crypto --external:fs --external:http --external:https --external:net --external:tls --external:zlib --external:string_decoder --external:url --external:process && cat scripts/edge-polyfill.js dist/server/bundled.js > dist/server/bundled-tmp.js && mv dist/server/bundled-tmp.js dist/server/bundled.js"
+  command = "npm install --legacy-peer-deps && npm run build && npx esbuild dist/server/server.js --bundle --format=esm --platform=node --outfile=dist/server/bundled.js --define:process.env.NODE_ENV='\"production\"' --external:node:* --external:cloudflare:* --alias:react-dom/server=react-dom/server.edge && cat scripts/edge-polyfill.js dist/server/bundled.js > dist/server/bundled-tmp.js && mv dist/server/bundled-tmp.js dist/server/bundled.js"
   publish = "dist/client"
 
 [build.environment]
