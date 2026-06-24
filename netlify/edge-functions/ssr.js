@@ -1,4 +1,4 @@
-import server from "../../dist/server/server.js";
+import server from "../../dist/server/bundled.js";
 
 export default async (request) => {
   return server.fetch(request, {}, {});

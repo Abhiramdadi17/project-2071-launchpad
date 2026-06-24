@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --legacy-peer-deps && npm run build"
+  command = "npm install --legacy-peer-deps && npm run build && npx esbuild dist/server/server.js --bundle --format=esm --platform=browser --outfile=dist/server/bundled.js --external:node:* --external:cloudflare:*"
   publish = "dist/client"
 
 [build.environment]
