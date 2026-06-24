@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import ScrollReveal from "@/components/ewm/ScrollReveal";
 import iconDigitalTransformation from "@/assets/icon-digital-transformation.png";
 import iconCostOptimisation from "@/assets/icon-cost-optimisation.png";
-import iconBigData from "@/assets/icon-big-data.png";
+import iconBigData from "@/assets/icon-big-data.png?url";
 import iconDigitalTwin from "@/assets/icon-digital-twin.png";
 import iconAiMl from "@/assets/icon-ai-ml.png";
 import iconQualityAssurance from "@/assets/icon-quality-assurance.png";

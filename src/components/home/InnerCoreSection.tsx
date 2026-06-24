@@ -8,12 +8,12 @@ import oic4 from "@/assets/oic-4.png";
 import oic5 from "@/assets/oic-5.png";
 
 type Size = "tall" | "short";
-const items: { img: string; title: string; desc: string; size: Size }[] = [
-  { img: oic1, title: "Customer Impact", desc: "Every Solution Starts And Ends With Measurable Client Success.", size: "tall" },
-  { img: oic2, title: "Engineering Excellence", desc: "Robust, Scalable Systems Built On Best-In-Class Practices.", size: "short" },
-  { img: oic3, title: "Industrial Expertise", desc: "Deep Domain Knowledge Across Manufacturing Verticals.", size: "tall" },
-  { img: oic4, title: "Practical Innovation", desc: "AI That Solves Real Problems, Not Just Proof-Of-Concepts.", size: "short" },
-  { img: oic5, title: "Collaborative Partnership", desc: "Long-Term Relationships Built On Trust And Shared Goals.", size: "tall" },
+const items: { img: string; alt: string; title: string; desc: string; size: Size }[] = [
+  { img: oic1, alt: "Customer impact", title: "Customer Impact", desc: "Every Solution Starts And Ends With Measurable Client Success.", size: "tall" },
+  { img: oic2, alt: "Engineering excellence", title: "Engineering Excellence", desc: "Robust, Scalable Systems Built On Best-In-Class Practices.", size: "short" },
+  { img: oic3, alt: "Industrial expertise", title: "Industrial Expertise", desc: "Deep Domain Knowledge Across Manufacturing Verticals.", size: "tall" },
+  { img: oic4, alt: "Practical innovation", title: "Practical Innovation", desc: "AI That Solves Real Problems, Not Just Proof-Of-Concepts.", size: "short" },
+  { img: oic5, alt: "Collaborative partnership", title: "Collaborative Partnership", desc: "Long-Term Relationships Built On Trust And Shared Goals.", size: "tall" },
 ];
 
 const InnerCoreSection = () => {
@@ -164,7 +164,7 @@ const InnerCoreSection = () => {
                     >
                       <img
                         src={item.img}
-                        alt={item.title}
+                        alt={item.alt}
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />
