@@ -1,4 +1,3 @@
-import "./lib/polyfill.js";
 import server from "../../dist/server/bundled.js";
 
 export default async (request) => {
