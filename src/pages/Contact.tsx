@@ -59,7 +59,7 @@ const Contact = () => {
               </p>
 
               <div className="flex items-center gap-3 mb-10">
-                <a href="https://www.linkedin.com/company/carbynetech-india-private-limited/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:opacity-80 transition-opacity">
+                <a href="https://www.linkedin.com/company/carbynetech/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:opacity-80 transition-opacity">
                   <Linkedin className="w-4 h-4" fill="currentColor" />
                 </a>
                 <a href="https://x.com/carbynetech" target="_blank" rel="noopener noreferrer" aria-label="X" className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:opacity-80 transition-opacity">

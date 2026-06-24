@@ -50,7 +50,7 @@ const FooterSection = () => {
               Empowering enterprises with cutting-edge AI, Data Engineering, and Digital Transformation solutions.
             </p>
             <div className="flex items-center gap-3">
-              <a href="https://www.linkedin.com/company/carbynetech-india-private-limited/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-8 h-8 rounded-full bg-[#1a1a18] flex items-center justify-center hover:bg-[#26261f] transition-colors"><LinkedinIcon className="w-3.5 h-3.5 text-white" /></a>
+              <a href="https://www.linkedin.com/company/carbynetech/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-8 h-8 rounded-full bg-[#1a1a18] flex items-center justify-center hover:bg-[#26261f] transition-colors"><LinkedinIcon className="w-3.5 h-3.5 text-white" /></a>
               <a href="https://x.com/carbynetech" target="_blank" rel="noopener noreferrer" aria-label="X" className="w-8 h-8 rounded-full bg-[#1a1a18] flex items-center justify-center hover:bg-[#26261f] transition-colors"><XIcon className="w-3 h-3 text-white" /></a>
               <a href="https://www.youtube.com/channel/UCDUJZ_6tu0bnZuiMmyc3RMw" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-8 h-8 rounded-full bg-[#1a1a18] flex items-center justify-center hover:bg-[#26261f] transition-colors"><YoutubeIcon className="w-3.5 h-3.5 text-white" /></a>
             </div>
