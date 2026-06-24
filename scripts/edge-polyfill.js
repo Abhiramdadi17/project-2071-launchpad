@@ -1,6 +1,9 @@
 // Prepended to dist/server/bundled.js at build time.
-// Deno has window === globalThis but no window.history or window.location.
-// TanStack Router calls createBrowserHistory() on init which needs both.
+// Deno 2.x removed window global (set to undefined). Restore it so that
+// code referencing window.history / window.location doesn't throw.
+if (typeof globalThis.window === "undefined") {
+  globalThis.window = globalThis;
+}
 if (typeof globalThis.history === "undefined") {
   globalThis.history = {
     state: null,
