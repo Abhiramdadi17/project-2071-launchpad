@@ -136,6 +136,7 @@ const backgroundRouteHrefs = preloadRouteHrefs.filter((href) => !directRouteHref
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [pinnedMenu, setPinnedMenu] = useState<string | null>(null);
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
@@ -154,7 +155,16 @@ const Navbar = () => {
 
   const scheduleClose = () => {
     cancelClose();
-    hoverCloseTimer.current = globalThis.setTimeout(() => setOpenMenu(null), 150);
+    hoverCloseTimer.current = globalThis.setTimeout(() => {
+      // A menu pinned open via click stays open until explicitly toggled/closed.
+      setOpenMenu((current) => (current !== null && current === pinnedMenu ? current : null));
+    }, 150);
+  };
+
+  const closeMenu = () => {
+    cancelClose();
+    setOpenMenu(null);
+    setPinnedMenu(null);
   };
 
   const openMenuOnHover = (title: string) => {
@@ -181,6 +191,7 @@ const Navbar = () => {
       const detail = (e as CustomEvent<{ menu: string }>).detail;
       if (detail?.menu === "Services" || detail?.menu === "Products") {
         setOpenMenu(detail.menu);
+        setPinnedMenu(detail.menu);
         if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
       }
     };
@@ -223,7 +234,7 @@ const Navbar = () => {
 
   const handleLinkClick = (href: string) => {
     preloadHref(href);
-    setOpenMenu(null);
+    closeMenu();
     setMobileOpen(false);
     setMobileSection(null);
     if (href.startsWith("/")) {
@@ -395,9 +406,15 @@ const Navbar = () => {
             }}
             onClick={() => {
               if (link.hasDropdown) {
-                setOpenMenu(openMenu === link.title ? null : link.title);
+                if (openMenu === link.title && pinnedMenu === link.title) {
+                  closeMenu();
+                } else {
+                  cancelClose();
+                  setOpenMenu(link.title);
+                  setPinnedMenu(link.title);
+                }
               } else {
-                setOpenMenu(null);
+                closeMenu();
                 if (link.href) navigate({ to: link.href });
               }
             }}
@@ -441,7 +458,7 @@ const Navbar = () => {
               onClick={(e) => {
                 e.preventDefault();
                 navigate({ to: "/" });
-                setOpenMenu(null);
+                closeMenu();
               }}
               className="shrink-0"
             >
@@ -474,7 +491,7 @@ const Navbar = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       navigate({ to: "/contact" });
-                      setOpenMenu(null);
+                      closeMenu();
                     }}
                     className={`flex h-8 sm:h-9 md:h-9 xl:h-10 2xl:h-11 items-center gap-1 sm:gap-1.5 rounded-none px-2 sm:px-2.5 md:px-3 xl:px-3.5 2xl:px-3.5 text-[10px] sm:text-[11px] md:text-[12px] xl:text-[13px] 2xl:text-[14px] font-semibold uppercase tracking-[0.12em] transition-all hover:opacity-90 ${
                       isContactActive
@@ -497,6 +514,10 @@ const Navbar = () => {
       <div
         onMouseEnter={cancelClose}
         onMouseLeave={scheduleClose}
+        onClick={(e) => {
+          // Clicking the empty backdrop (not a link/content) dismisses a pinned menu.
+          if (e.target === e.currentTarget) closeMenu();
+        }}
         className={`fixed inset-0 z-[100] transition-all duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] ${
           isOverlayOpen ? "visible opacity-100" : "invisible opacity-0"
         }`}
