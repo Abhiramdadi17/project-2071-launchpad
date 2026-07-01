@@ -595,13 +595,18 @@ export default function Sfx9Mes() {
             >
               Contact Us
             </a>
-            <ExplorePanel
-              type="more"
-              className="px-9 py-3.5 text-[12px] font-semibold uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white inline-flex items-center justify-center"
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  window.dispatchEvent(new CustomEvent("open-nav-menu", { detail: { menu: "Services" } }));
+                }
+              }}
+              className="px-9 py-3.5 text-[12px] font-semibold uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white inline-flex items-center justify-center cursor-pointer"
               style={{ border: "1px solid rgba(0,0,0,0.35)" }}
             >
               Explore More
-            </ExplorePanel>
+            </button>
           </div>
         </div>
 

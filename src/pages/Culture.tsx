@@ -98,7 +98,7 @@ const Culture = () => {
                   className="text-center leading-[0.95] text-[#0a0a0a]"
                   style={{ fontFamily: serif, fontWeight: 800, fontSize: "clamp(40px, 7.5vw, 112px)" }}
                 >
-                  Culture at CarbyneTech — Crafting Solutions That Matter
+                  Crafting
                 </h1>
               </div>
             </div>

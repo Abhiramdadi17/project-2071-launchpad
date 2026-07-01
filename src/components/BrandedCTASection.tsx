@@ -85,13 +85,18 @@ const BrandedCTASection = ({
                   </svg>
                 </a>
 
-                <a
-                  href={secondaryHref}
-                  className="rounded-full px-5 py-2.5 text-[12px] font-medium text-white transition-transform hover:scale-105 sm:px-7 sm:py-3 sm:text-[13px]"
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (typeof window !== "undefined") {
+                      window.dispatchEvent(new CustomEvent("open-nav-menu", { detail: { menu: "Services" } }));
+                    }
+                  }}
+                  className="rounded-full px-5 py-2.5 text-[12px] font-medium text-white transition-transform hover:scale-105 sm:px-7 sm:py-3 sm:text-[13px] cursor-pointer"
                   style={{ background: "transparent" }}
                 >
                   {secondaryLabel}
-                </a>
+                </button>
               </div>
             </ScrollReveal>
           </div>

@@ -1029,13 +1029,18 @@ const SeeInventiqCTASection = () => {
             }}
             className="w-full sm:w-auto"
           >
-            <ExplorePanel
-              type="more"
-              className="w-full sm:w-auto px-8 sm:px-9 py-3.5 text-[14px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white text-center inline-flex items-center justify-center"
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  window.dispatchEvent(new CustomEvent("open-nav-menu", { detail: { menu: "Services" } }));
+                }
+              }}
+              className="w-full sm:w-auto px-8 sm:px-9 py-3.5 text-[14px] font-medium uppercase tracking-[0.22em] transition-colors text-[#1a1a1a] hover:bg-black hover:!text-white text-center inline-flex items-center justify-center cursor-pointer"
               style={{ border: "1px solid rgba(0,0,0,0.35)" }}
             >
               Explore More
-            </ExplorePanel>
+            </button>
           </motion.div>
         </motion.div>
       </div>

@@ -1,4 +1,8 @@
-import ExplorePanel from "@/components/ExplorePanel";
+const openServicesNav = () => {
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new CustomEvent("open-nav-menu", { detail: { menu: "Services" } }));
+  }
+};
 
 const CTASection = () => {
   return (
@@ -28,13 +32,14 @@ const CTASection = () => {
           >
             CONTACT US
           </a>
-          <ExplorePanel
-            type="more"
-            className="w-full sm:w-auto px-6 py-3 text-sm font-medium rounded-none transition-colors text-center inline-flex items-center justify-center"
+          <button
+            type="button"
+            onClick={openServicesNav}
+            className="w-full sm:w-auto px-6 py-3 text-sm font-medium rounded-none transition-colors text-center inline-flex items-center justify-center cursor-pointer"
             style={{ border: '1px solid rgba(8,11,20,0.3)', color: '#080B14' }}
           >
             EXPLORE MORE
-          </ExplorePanel>
+          </button>
         </div>
       </div>
     </section>
